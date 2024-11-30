@@ -1,0 +1,42 @@
+.Menu-container {
+    height: 50px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ecdedebd;
+
+
+    .Main-menu {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        height: 100%;
+
+        .menu-drop {
+            font-size: 12px;
+            font-weight: 600;
+            height: 100%;
+            align-items: center;
+            display: flex;
+
+            &:hover {
+                border-top: 4px solid rgb(0, 204, 255);
+            }
+
+            .menu-item {
+                color: #777;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.menu-drop>.dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-drop:hover>.dropdown-menu {
+    display: block;
+    opacity: 1;
+}

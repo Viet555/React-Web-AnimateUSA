@@ -1,0 +1,161 @@
+.container-figure {
+    margin-top: 5%;
+    height: 26rem;
+
+    .header-figure {
+        display: flex;
+        align-items: center;
+
+        .line-l,
+        .line-r {
+            width: 36%;
+            height: 1px;
+            min-width: 10%;
+            background: #0202021e;
+        }
+
+        .inline-title {
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 34px;
+        }
+    }
+
+    .content-main {
+        margin-top: 4%;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+
+        .figure-content {
+            display: flex;
+            gap: 8px;
+
+            .content {
+                position: relative;
+
+                .img-display {
+                    margin-bottom: 10px;
+
+                    img {
+
+                        height: 180px;
+                        width: 100%;
+                    }
+                }
+
+                .info-display {
+
+                    text-align: center;
+                    font-weight: 600;
+
+                    .cost-display {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+
+                    .evaluate {
+                        margin-top: 7px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+
+                        .icon-show {
+                            border: 1px solid rgba(57, 56, 54, 0.329);
+                            height: 35px;
+                            width: 35px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            opacity: 0;
+
+                            &:hover {
+                                transform: translate(0, -4px);
+                            }
+                        }
+
+                        .add-to-cart {
+
+                            border: none;
+                            background-color: rgb(237, 141, 24);
+                            height: 35px;
+                            width: 109px;
+                            color: azure;
+                            text-transform: uppercase;
+                            font-size: 13px;
+                            font-weight: 600;
+
+
+                            &:hover {
+                                transition: .3s;
+                                background-color: #395fab;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: 2px 2px #888888;
+                        transform: translate(0, 5px);
+                        background-color: rgb(255, 255, 255);
+                    }
+
+                    &:hover .icon-show {
+                        opacity: 1;
+                    }
+                }
+
+                .show-quick-view {
+                    color: white;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 13px;
+                    display: flex;
+                    position: absolute;
+                    top: 42%;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: rgba(80, 161, 237, 0.911);
+                    height: 47px;
+                    opacity: 0;
+
+
+                    &:hover {
+                        top: 45%;
+                        cursor: pointer;
+                        background-color: rgb(80, 161, 237);
+                    }
+                }
+
+                &:hover .show-quick-view {
+                    top: 45%;
+                    opacity: 1;
+                }
+
+                &:hover .info-display {
+
+                    box-shadow: 2px 2px #888888;
+                    transform: translate(0, 5px);
+                    background-color: rgb(255, 255, 255);
+
+                }
+
+                &:hover .show-quick-view {
+                    top: 45%;
+                    opacity: 1;
+
+                }
+
+                &:hover .info-display .icon-show {
+                    opacity: 1;
+                }
+            }
+
+
+
+
+
+        }
+    }
+}

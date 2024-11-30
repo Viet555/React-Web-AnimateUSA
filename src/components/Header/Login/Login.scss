@@ -1,0 +1,116 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .form-container {
+        height: 400px;
+        width: 25rem;
+        background-color: #eaf2f669;
+        padding: 16px;
+
+        .Header-login {
+            text-align: center;
+            color: black;
+            font-size: 1.8rem;
+            font-weight: 800;
+            padding-bottom: 8px;
+        }
+
+        .form-content {
+
+            .form-control {
+                margin: 8px 0;
+            }
+
+            .input-password {
+
+                position: relative;
+
+                i {
+                    top: 30%;
+                    left: 90%;
+                    position: absolute;
+                    cursor: pointer;
+                }
+
+            }
+        }
+
+        .forget-password {
+            font-size: 15px;
+            color: rgb(78, 153, 179);
+            cursor: pointer;
+            text-decoration: underline;
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .btn-login {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+
+            .btn-acction {
+                width: 100%;
+                border: none;
+                border-radius: 5px;
+                line-height: 2.8rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #eeeeee6c;
+                    color: black;
+                }
+            }
+
+            .btn-disable-acction {
+                width: 100%;
+                border: none;
+                border-radius: 5px;
+                line-height: 2.8rem;
+                cursor: pointer;
+                overflow: hidden;
+                cursor: not-allowed;
+
+            }
+        }
+
+
+    }
+
+    .dont-account {
+        font-size: 15px;
+        margin: 1.2em;
+
+        a {
+            margin-left: 3px;
+            text-decoration: none;
+        }
+    }
+
+    .return-home {
+        font-weight: 200;
+        font-size: 14px;
+        display: block;
+        float: right;
+        margin-top: 30px;
+
+        &:hover {
+            transform: translateX(5px);
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
