@@ -1,4 +1,4 @@
-import LogoBanner from '../../asset/image/500_x_204_140x.avif'
+import LogoBanner from '../../../asset/image/500_x_204_140x.avif'
 import './Banner.scss'
 const Banner = () => {
     return (

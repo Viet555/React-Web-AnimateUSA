@@ -3,7 +3,6 @@
     text-transform: uppercase;
     border-bottom: 1px solid #ecdedebd;
 
-
     .Main-menu {
         align-items: center;
         display: flex;
@@ -39,4 +38,42 @@
 .menu-drop:hover>.dropdown-menu {
     display: block;
     opacity: 1;
+}
+
+.scroll-menu {
+    position: sticky; //!
+    z-index: 100; //! sticky
+    top: 0%; //!
+    height: 100px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ecdedebd;
+    background-color: #4464b4;
+    color: rgb(251, 253, 255);
+    transition: .3s;
+
+    .scroll-menu-main {
+        .menu-drop-scroll {
+
+            font-size: 12px;
+            font-weight: 600;
+            height: 100%;
+            align-items: center;
+            display: flex;
+
+            &:hover {
+                border-top: 4px solid rgb(0, 204, 255);
+            }
+        }
+    }
+
+    i {
+        color: #fbfbfb;
+        font-size: 25px;
+        margin-left: 30px;
+
+        &:hover {
+            cursor: pointer;
+            color: #3b75e9;
+        }
+    }
 }

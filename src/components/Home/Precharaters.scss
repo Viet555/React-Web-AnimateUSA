@@ -1,15 +1,18 @@
-.container-figure {
+.container-charater {
     margin-top: 5%;
-    height: 27rem;
+    height: auto;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
 
 
-    .header-figure {
+    .header-charater {
         display: flex;
         align-items: center;
 
         .line-l,
         .line-r {
-            width: 36%;
+            width: 30%;
             height: 1px;
             min-width: 10%;
             background: #0202021e;
@@ -18,7 +21,7 @@
         .inline-title {
             text-decoration: underline;
             font-weight: bold;
-            font-size: 34px;
+            font-size: 33px;
         }
     }
 
@@ -28,7 +31,10 @@
         width: 95%;
         cursor: pointer;
 
-        .figure-content {
+        .charater-content {
+            flex-wrap: wrap;
+            /* Tự động xuống dòng */
+            justify-content: space-around;
             display: flex;
             gap: 9px;
 

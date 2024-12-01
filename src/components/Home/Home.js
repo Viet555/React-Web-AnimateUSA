@@ -1,11 +1,15 @@
 
 import './Home.scss'
 import BuyAlotTour from '../BuylotTour/BuyAlotTour';
-import Banner from './Banner';
-import Dropmenu from './Dropmenu';
+
+
 import MainBanner from '../MainBanner/MainBanner';
 import Slider from "react-slick";
 import PreFigures from './PreFigures';
+import Banner from './Banner/Banner';
+import PreCharacters from './PreCharacters';
+import Dropmenu from './MenuDrop/Dropmenu';
+import AnimeExclusive from './AnimeExclusive';
 const Home = () => {
     let settings = {
         dots: true,
@@ -27,7 +31,9 @@ const Home = () => {
                 settings={settings}
             />
             <PreFigures />
-            <BuyAlotTour />
+            <PreCharacters />
+            <AnimeExclusive />
+
 
         </>
     )

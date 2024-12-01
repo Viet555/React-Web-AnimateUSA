@@ -1,8 +1,8 @@
-import './PreFigures.scss'
-import figure1 from '../../asset/image/figure/figure1.webp'
-import figure11 from '../../asset/image/figure/figure1.1.webp'
+import './AnimeExclusive.scss'
+import anm2 from '../../asset/image/animeexclusive/anm2.webp'
+import anm22 from '../../asset/image/animeexclusive/anm22.webp'
 import { useState } from 'react'
-const PreFigures = () => {
+const AnimeExclusive = () => {
 
 
 
@@ -14,26 +14,26 @@ const PreFigures = () => {
     }
     return (
         <>
-            <div className="container-figure col-12">
+            <div className="container-AnimeExclusive col-12">
                 <div className='container'>
-                    <div className="header-figure">
+                    <div className="header-AnimeExclusive">
                         <span className="line-l"></span>
-                        <span className="inline-title">PRE-ORDER: Figures</span>
+                        <span className="inline-title">Animate Exclusives</span>
                         <span className="line-r"></span>
                     </div>
                     <div className="content-main">
-                        <div className="figure-content col-12 ">
+                        <div className="AnimeExclusive-content col-12 ">
                             <div className='content col-2'>
                                 <div className='img-display'
                                     onMouseOver={() => handleOnMouse()}
                                     onMouseOut={() => handleOnMouse()}
                                     value={imgdefault}
                                 >
-                                    <img src={imgdefault === true ? figure1 : figure11} />
+                                    <img src={imgdefault === true ? anm2 : anm22} />
                                 </div>
 
                                 <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale Figure</span>
+                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale AnimeExclusive</span>
                                     <div className='cost-display'>$178.99</div>
                                     <div className='evaluate'>
                                         <span ><i className=" icon-show fa-regular fa-heart"></i></span>
@@ -53,11 +53,11 @@ const PreFigures = () => {
                                     onMouseOut={() => handleOnMouse('imgdefault')}
                                 >
 
-                                    <img src={imgdefault === true ? figure1 : figure11} />
+                                    <img src={imgdefault === true ? anm2 : anm22} />
                                 </div>
 
                                 <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale Figure</span>
+                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale AnimeExclusive</span>
                                     <div className='cost-display'>$178.99</div>
                                     <div className='evaluate'>
                                         <span ><i className=" icon-show fa-regular fa-heart"></i></span>
@@ -78,11 +78,11 @@ const PreFigures = () => {
                                     onMouseOut={() => handleOnMouse('imgdefault')}
                                 >
 
-                                    <img src={imgdefault === true ? figure1 : figure11} />
+                                    <img src={imgdefault === true ? anm2 : anm22} />
                                 </div>
 
                                 <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale Figure</span>
+                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale AnimeExclusive</span>
                                     <div className='cost-display'>$178.99</div>
                                     <div className='evaluate'>
                                         <span ><i className=" icon-show fa-regular fa-heart"></i></span>
@@ -102,11 +102,11 @@ const PreFigures = () => {
                                     onMouseOut={() => handleOnMouse('imgdefault')}
                                 >
 
-                                    <img src={imgdefault === true ? figure1 : figure11} />
+                                    <img src={imgdefault === true ? anm2 : anm22} />
                                 </div>
 
                                 <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale Figure</span>
+                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale AnimeExclusive</span>
                                     <div className='cost-display'>$178.99</div>
                                     <div className='evaluate'>
                                         <span ><i className=" icon-show fa-regular fa-heart"></i></span>
@@ -125,11 +125,11 @@ const PreFigures = () => {
                                     onMouseOut={() => handleOnMouse('imgdefault')}
                                 >
 
-                                    <img src={imgdefault === true ? figure1 : figure11} />
+                                    <img src={imgdefault === true ? anm2 : anm22} />
                                 </div>
 
                                 <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale Figure</span>
+                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale AnimeExclusive</span>
                                     <div className='cost-display'>$178.99</div>
                                     <div className='evaluate'>
                                         <span ><i className=" icon-show fa-regular fa-heart"></i></span>
@@ -148,11 +148,11 @@ const PreFigures = () => {
                                     onMouseOut={() => handleOnMouse('imgdefault')}
                                 >
 
-                                    <img src={imgdefault === true ? figure1 : figure11} />
+                                    <img src={imgdefault === true ? anm2 : anm22} />
                                 </div>
 
                                 <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale Figure</span>
+                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale AnimeExclusive</span>
                                     <div className='cost-display'>$178.99</div>
                                     <div className='evaluate'>
                                         <span ><i className=" icon-show fa-regular fa-heart"></i></span>
@@ -175,4 +175,4 @@ const PreFigures = () => {
         </>
     )
 }
-export default PreFigures;
+export default AnimeExclusive;
