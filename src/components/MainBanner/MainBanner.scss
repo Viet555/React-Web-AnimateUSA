@@ -208,6 +208,7 @@
     display: none !important;
 }
 
+//slick container
 .container-Banner-slick {
     height: 22rem;
     width: 100%;
@@ -242,4 +243,65 @@
     }
 
 
+}
+
+
+//Responsive 
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    .container-Banner-slick {
+        height: 18rem;
+
+        .content-slick {
+            padding: 10px 30px;
+
+            .img-slider img {
+                width: 95%;
+                height: 250px;
+                /* Giảm chiều cao cho màn hình vừa */
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container-Banner-slick {
+        height: 16rem;
+
+        .content-slick {
+            padding: 10px 20px;
+
+            .img-slider img {
+                width: 95%;
+                height: 200px;
+                /* Giảm chiều cao thêm cho màn hình nhỏ */
+                margin-left: 0;
+                /* Căn giữa */
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container-Banner-slick {
+        height: 12rem;
+
+        .content-slick {
+            padding: 5px 15px;
+
+            .img-slider {
+
+                margin-left: 0;
+            }
+
+            .img-slider img {
+
+                width: 100%;
+                height: 150px;
+                /* Tối ưu cho điện thoại */
+                margin-left: 0;
+                /* Căn giữa */
+            }
+        }
+    }
 }

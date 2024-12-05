@@ -30,9 +30,9 @@
 
 
         .header__option {
-
+            color: #777 !important;
             font-size: 11px;
-            color: #777;
+
             margin-top: 4px;
         }
 
@@ -40,13 +40,14 @@
             display: flex;
 
             i {
-                color: #777;
+
                 text-align: center;
                 width: 25px;
                 font-size: 12px;
                 padding: 5px;
                 border-radius: 50%;
                 transition: .3s;
+                color: #777;
 
                 &:hover.active1 {
 
@@ -70,10 +71,46 @@
                 }
             }
 
+            .btn-logout {
+                padding-left: 20px;
+
+                display: flex;
+                align-items: center;
 
 
+                i {
+                    font-size: 17px;
 
-
+                    &:hover {
+                        cursor: pointer;
+                        color: #3b5a9a;
+                    }
+                }
+            }
         }
     }
+}
+
+@media (max-width :768px) {
+    .text-left-header {
+        display: none;
+    }
+
+    .nav__header-option {
+
+        width: fit-content;
+        background-color: #030303d7;
+        border-radius: 10px;
+        height: 100%;
+    }
+
+    .header__option {
+        color: rgb(255, 243, 243) !important;
+        font-size: 12px !important;
+
+        &:hover {
+            background-color: #3b5a9a;
+        }
+    }
+
 }

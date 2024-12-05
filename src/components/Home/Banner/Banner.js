@@ -6,7 +6,7 @@ const Banner = () => {
             <div className="Banner-container">
                 <div className="content-left">
                     <div className="logo-banner">
-                        <img src={LogoBanner} />
+                        <a href='/'><img src={LogoBanner} /></a>
                     </div>
                 </div>
                 <div className="content-between">
@@ -14,7 +14,7 @@ const Banner = () => {
                     <i className="icon-search fa-solid fa-magnifying-glass"></i>
                     <input type='text' placeholder='SEARCH...'></input>
                     <div className='categories'>
-                        <span>  All Categories <i className="fa-solid fa-circle-chevron-down mx-1"></i></span>
+                        <span>  All Categories <i className="fa-solid fa-circle-chevron-down mx-2"></i></span>
                     </div>
                 </div>
                 <div className="content-right">

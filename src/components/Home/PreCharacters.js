@@ -210,8 +210,9 @@ const PreCharacter = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className='content-last'><a href='/'>More-details</a></div>
                     </div>
-                    <div className='content-last'><a href='/'>More-details</a></div>
+
                 </div>
 
             </div>

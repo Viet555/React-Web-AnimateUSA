@@ -7,11 +7,13 @@ import { NavLink } from 'react-router-dom';
 
 import { NavItem } from 'react-bootstrap';
 import { useState } from 'react';
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import * as action from '../Store/export'
 
 const Header = () => {
-
+    const dispatch = useDispatch()
+    const userInfo = useSelector(state => state.user.account);
+    console.log("check email state", userInfo)
     return (
         <>
             <div className='header-container col-12'>
@@ -23,7 +25,7 @@ const Header = () => {
                                 <span className='text-left-header'> Official retailer of anime goods in the U.S. and Canada!</span>
                             </Nav>
                             <Nav className='nav__header-option'>
-                                <NavLink to='/IntroDuce' className='header__option nav-link option-login'> Sign In / Register</NavLink>
+                                <NavLink to='/login' className='header__option nav-link option-login'> {userInfo && userInfo.firstName ? userInfo.firstName : "Sign In / Register"}</NavLink>
                                 <Nav.Link href="#link" className="header__option ">Account </Nav.Link>
                                 <Nav.Link href="#link" className="header__option ">Blog</Nav.Link>
                                 <NavLink to="/New" className="header__option nav-link ">My Wishlist</NavLink>
@@ -39,7 +41,14 @@ const Header = () => {
                                     <Nav.Link href="#link" className="header__option ">
                                         <i class="fa-brands fa-instagram active3"></i>
                                     </Nav.Link>
-
+                                    {userInfo && userInfo.firstName &&
+                                        <div className="btn-logout">
+                                            <i
+                                                onClick={() => dispatch((action.UserLogout()))}
+                                                className="fa-solid fa-right-from-bracket">
+                                            </i>
+                                        </div>
+                                    }
                                 </div>
                             </Nav>
                         </Navbar.Collapse>
@@ -53,4 +62,5 @@ const Header = () => {
 
     )
 }
+
 export default Header;

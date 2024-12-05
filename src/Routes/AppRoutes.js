@@ -5,16 +5,23 @@ import IntroDuce from "../components/IntroDuce";
 import Header from "../components/Header/Header";
 import New from "../components/New/New";
 import BuyAlotTour from "../components/BuylotTour/BuyAlotTour";
+import Register from "../components/Header/Login/Register";
+import ImgSection from "../components/Admin/DisplayAdd/ImgSection";
+import AdminManager from "../components/Admin/AdminManager";
 
 const AppRoutes = () => {
+
     return (
         <>
             <Routes>
+
                 <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/IntroDuce" element={<IntroDuce />} />
                 <Route path="/New" element={<New />} />
                 <Route path="/TourbestSell" element={<BuyAlotTour />} />
+                <Route path="/AdminManager" element={<AdminManager />} />
             </Routes>
 
         </>

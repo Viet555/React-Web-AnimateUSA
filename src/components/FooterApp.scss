@@ -1,7 +1,7 @@
 .footer-container {
     background-color: #4464b4;
     color: #fff;
-    height: 38rem;
+    height: 33rem;
     max-height: 60rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
@@ -58,21 +58,21 @@
                         border-radius: 50%;
 
                         &:hover.active1 {
-
+                            transition: .3s;
                             background: #3b5a9a;
                             color: white;
 
                         }
 
                         &:hover.active2 {
-
+                            transition: .3s;
                             background: #69b6f2;
                             color: white;
 
                         }
 
                         &:hover.active3 {
-
+                            transition: .3s;
                             background: #eb9f3c;
                             color: white;
 
@@ -149,4 +149,43 @@
             width: 50%;
         }
     }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+
+        height: 35rem;
+
+        .footer-main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            .content-left,
+            .content-center {
+                width: 100%;
+                font-size: 12px;
+
+
+                .title-contact {
+                    padding: 0;
+                    width: 100%;
+                    margin-top: 10px;
+                    margin-left: 0;
+                }
+            }
+
+            .content-right {
+                width: 100%;
+
+                iframe {
+                    margin-top: 20px;
+                    margin-left: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
 }
