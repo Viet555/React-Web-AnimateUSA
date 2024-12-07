@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import ImgSection from "./DisplayAdd/ImgSection"
 import { toast } from "react-toastify"
 import { AddBannerImage } from "../../Services/ApiService"
+import ManagerProduct from "./ManagerProduct/ManagerProduct.js"
 
 const AdminManager = () => {
 
@@ -40,6 +41,7 @@ const AdminManager = () => {
                 handleSaveAddBanner={handleSaveAddBanner}
 
             />
+            <ManagerProduct />
         </>
     )
 }

@@ -27,7 +27,6 @@ const MainBanner = (props) => {
     return (
 
         <>
-
             <div className='container-Banner-slick'>
                 <div className='content-slick'>
                     <Slider {...settings}>

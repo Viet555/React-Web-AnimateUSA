@@ -11,4 +11,10 @@ const AddBannerImage = (dataInput) => {
 const fetchLimitBannerImg = (limitInput) => {
     return axios.get(`/api/limit-img-banner?limitInput=${limitInput}`);
 }
-export { userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg }
+const fetchDataTypeProduct = (typeInput) => {
+    return axios.get(`/api/allcode?typeInput=${typeInput}`);
+}
+const createProductDisplay = (ProductData) => {
+    return axios.post(`/api/Create-product`, ProductData);
+}
+export { userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg, fetchDataTypeProduct, createProductDisplay }
