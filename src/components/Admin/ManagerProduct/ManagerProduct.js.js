@@ -28,6 +28,7 @@ const ManagerProduct = () => {
     useEffect(() => {
         let selecBuild = buildDataSelect(dataProduct)
         setOption(selecBuild)
+        console.log(selecBuild)
     }, [dataProduct])
 
     const buildDataSelect = (inputData) => {
@@ -44,6 +45,7 @@ const ManagerProduct = () => {
         )
             return result;
     }
+
     const handleChangeSelect = (event) => {
         setTypeProduct(event)
     }
@@ -61,9 +63,7 @@ const ManagerProduct = () => {
         if (!productName || !typeProduct || !count || !tag || !sku || !imageProduct || !Categories) {
             toast.error("missing input params")
         }
-        if (count !== typeof INTEGER) {
-            toast.error("Count value might a INTEGER")
-        }
+
         else {
             let res = await createProductDisplay({
                 productName: productName,
@@ -75,22 +75,21 @@ const ManagerProduct = () => {
                 tag: tag
 
             })
-            toast.success('Create Success')
-            setProductName('')
-            setTypeProduct('')
-            setCount('')
-            setCategories('')
-            setSku('')
-            setTag('')
-            setImgPrev([])
-            setImageProduct('')
-            setProductName('')
-
+            if (res && res.errCode === 0) {
+                toast.success('Create Success')
+                setProductName('')
+                setTypeProduct('')
+                setCount('')
+                setCategories('')
+                setSku('')
+                setTag('')
+                setImgPrev([])
+                setImageProduct('')
+                setProductName('')
+            }
         }
     }
-
     return (
-
         <>
 
             <div className="product-container my-5">
@@ -150,27 +149,28 @@ const ManagerProduct = () => {
 
                     </div>
                     <div className="form-group col-4">
-                        <label htmlFor="imageProduct" className='Add-Image'>Image</label>
-                        <input
-                            onChange={(event) => handleUploadFileImg(event)}
-                            type='file'
-                            id='imageProduct'
-                            className="form-control" hidden />
-                        <div className='img-prev'>
-                            {imgprev
-                                ?
-                                <img src={imgprev} />
+                        <>
 
-                                :
-                                ''
-                            }
-                            {imgprev ?
-                                <span onClick={() => setImgPrev(null)}>x</span>
-                                :
-                                ""
-                            }
-
-                        </div>
+                            <label htmlFor="imageProduct" className='Add-Image'>Image</label>
+                            <input
+                                onChange={(event) => handleUploadFileImg(event)}
+                                type='file'
+                                id='imageProduct'
+                                className="form-control" hidden />
+                            <div className='img-prev'>
+                                {imgprev
+                                    ?
+                                    <img src={imgprev} />
+                                    :
+                                    ""
+                                }
+                                {imgprev ?
+                                    <span onClick={() => setImgPrev(null)}>x</span>
+                                    :
+                                    ""
+                                }
+                            </div>
+                        </>
                         <button className='btn btn-primary w-50 mt-4'
                             onClick={() => handleCreateProduct()}
                         >CREATE</button>

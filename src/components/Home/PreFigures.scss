@@ -26,15 +26,16 @@
         margin-top: 4%;
         height: 100%;
         width: 95%;
-        cursor: pointer;
+
 
         .figure-content {
             display: flex;
             gap: 9px;
 
+
             .content {
                 position: relative;
-
+                cursor: pointer;
 
                 .img-display {
                     margin-bottom: 10px;
@@ -64,17 +65,36 @@
                     text-align: center;
                     font-weight: 600;
 
+
+                    .line-clamp {
+                        display: -webkit-box;
+                        /* Sử dụng định dạng khối linh hoạt */
+                        -webkit-box-orient: vertical;
+                        /* Hướng khối theo chiều dọc */
+                        -webkit-line-clamp: 2;
+                        /* Giới hạn hiển thị tối đa 2 dòng */
+                        overflow: hidden;
+                        /* Ẩn phần nội dung vượt quá */
+                        text-overflow: ellipsis;
+                        /* Thêm dấu "..." ở cuối */
+                        word-break: break-word;
+                        /* Bẻ từ nếu quá dài */
+                    }
+
                     .cost-display {
+                        margin-top: 5px;
                         font-size: 20px;
                         font-weight: 600;
                     }
 
                     .evaluate {
-                        margin-top: 7px;
+
+                        margin-top: 9px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         gap: 5px;
+                        bottom: 0 !important;
 
                         .icon-show {
                             border: 1px solid rgba(57, 56, 54, 0.329);

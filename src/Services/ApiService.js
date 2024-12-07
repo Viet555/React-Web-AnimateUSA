@@ -17,4 +17,7 @@ const fetchDataTypeProduct = (typeInput) => {
 const createProductDisplay = (ProductData) => {
     return axios.post(`/api/Create-product`, ProductData);
 }
-export { userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg, fetchDataTypeProduct, createProductDisplay }
+const fetchLimitProductDisplay = (limitInput, typeInput) => {
+    return axios.get(`/api/limit-Product-display?limitInput=${limitInput}&typeInput=${typeInput}`);
+}
+export { userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg, fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay }

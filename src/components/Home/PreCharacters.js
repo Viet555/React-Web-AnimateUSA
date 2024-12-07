@@ -1,8 +1,27 @@
 import './Precharaters.scss'
 import crt1 from '../../asset/image/character/crt1.webp'
 import crt11 from '../../asset/image/character/crt1.1.webp'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import * as action from '../Store/export'
+import { Buffer } from 'buffer'
+import _ from 'lodash'
 const PreCharacter = () => {
+    const dispatch = useDispatch()
+    const productChar = useSelector(state => state.admin.ProductCharacter)
+
+    const [listProductChar, setListproductChar] = useState()
+
+
+    useEffect(() => {
+        dispatch(action.fetchLimitProductChar())
+
+    }, [])
+    useEffect(() => {
+        if (!_.isEmpty(productChar)) {
+            setListproductChar(productChar.data)
+        }
+    }, [productChar])
 
     const [imgdefault, setImgDefault] = useState(true)
     const handleOnMouse = (newimg) => {
@@ -21,56 +40,40 @@ const PreCharacter = () => {
                     </div>
                     <div className="content-main">
                         <div className="charater-content col-12 ">
-                            <div className='content col-2'>
-                                <div className='img-display'
-                                    onMouseOver={() => handleOnMouse()}
-                                    onMouseOut={() => handleOnMouse()}
-                                    value={imgdefault}
-                                >
-                                    <img src={imgdefault === true ? crt1 : crt11} />
-                                </div>
+                            {listProductChar && listProductChar.length > 0 &&
+                                listProductChar.map((item, index) => {
+                                    let imageBuffer = ''
+                                    imageBuffer = new Buffer(item.imageProduct, 'base64').toString('binary');
+                                    return (
+                                        <div className='content col-2' key={index}>
+                                            <div className='img-display'
+                                                onMouseOver={() => handleOnMouse()}
+                                                onMouseOut={() => handleOnMouse()}
+                                                value={imgdefault}
+                                            >
+                                                <img src={imageBuffer} />
+                                            </div>
 
-                                <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale charater</span>
-                                    <div className='cost-display'>$178.99</div>
-                                    <div className='evaluate'>
-                                        <span ><i className=" icon-show fa-regular fa-heart"></i></span>
-                                        <button className='add-to-cart'>add to cart</button>
-                                        <span><i className=" icon-show fa-solid fa-chart-simple"></i></span>
-                                    </div>
-
-
-                                </div>
-                                <div className='show-quick-view'>
-                                    Quick View
-                                </div>
-                            </div>
-                            <div className='content col-2'>
-                                <div className='img-display'
-                                    onMouseOver={() => handleOnMouse('imgdefault')}
-                                    onMouseOut={() => handleOnMouse('imgdefault')}
-                                >
-
-                                    <img src={imgdefault === true ? crt1 : crt11} />
-                                </div>
-
-                                <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale charater</span>
-                                    <div className='cost-display'>$178.99</div>
-                                    <div className='evaluate'>
-                                        <span ><i className=" icon-show fa-regular fa-heart"></i></span>
-                                        <button className='add-to-cart'>add to cart</button>
-                                        <span><i className=" icon-show fa-solid fa-chart-simple"></i></span>
-                                    </div>
+                                            <div className='info-display'>
+                                                <span className='line-clamp'>{item.productName}</span>
+                                                <div className='cost-display'>${item.count}</div>
+                                                <div className='evaluate'>
+                                                    <span ><i className=" icon-show fa-regular fa-heart"></i></span>
+                                                    <button className='add-to-cart'>add to cart</button>
+                                                    <span><i className=" icon-show fa-solid fa-chart-simple"></i></span>
+                                                </div>
 
 
-                                </div>
-                                <div className='show-quick-view'>
-                                    Quick View
-                                </div>
+                                            </div>
+                                            <div className='show-quick-view'>
+                                                Quick View
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
 
-                            </div>
-                            <div className='content col-2'>
+                            {/* <div className='content col-2'>
                                 <div className='img-display'
                                     onMouseOver={() => handleOnMouse('imgdefault')}
                                     onMouseOut={() => handleOnMouse('imgdefault')}
@@ -93,6 +96,7 @@ const PreCharacter = () => {
                                 <div className='show-quick-view'>
                                     Quick View
                                 </div>
+
                             </div>
                             <div className='content col-2'>
                                 <div className='img-display'
@@ -112,28 +116,6 @@ const PreCharacter = () => {
                                         <span><i className=" icon-show fa-solid fa-chart-simple"></i></span>
                                     </div>
 
-                                </div>
-                                <div className='show-quick-view'>
-                                    Quick View
-                                </div>
-                            </div>
-                            <div className='content col-2'>
-                                <div className='img-display'
-                                    onMouseOver={() => handleOnMouse('imgdefault')}
-                                    onMouseOut={() => handleOnMouse('imgdefault')}
-                                >
-
-                                    <img src={imgdefault === true ? crt1 : crt11} />
-                                </div>
-
-                                <div className='info-display'>
-                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale charater</span>
-                                    <div className='cost-display'>$178.99</div>
-                                    <div className='evaluate'>
-                                        <span ><i className=" icon-show fa-regular fa-heart"></i></span>
-                                        <button className='add-to-cart'>add to cart</button>
-                                        <span><i className=" icon-show fa-solid fa-chart-simple"></i></span>
-                                    </div>
 
                                 </div>
                                 <div className='show-quick-view'>
@@ -209,6 +191,52 @@ const PreCharacter = () => {
                                     Quick View
                                 </div>
                             </div>
+                            <div className='content col-2'>
+                                <div className='img-display'
+                                    onMouseOver={() => handleOnMouse('imgdefault')}
+                                    onMouseOut={() => handleOnMouse('imgdefault')}
+                                >
+
+                                    <img src={imgdefault === true ? crt1 : crt11} />
+                                </div>
+
+                                <div className='info-display'>
+                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale charater</span>
+                                    <div className='cost-display'>$178.99</div>
+                                    <div className='evaluate'>
+                                        <span ><i className=" icon-show fa-regular fa-heart"></i></span>
+                                        <button className='add-to-cart'>add to cart</button>
+                                        <span><i className=" icon-show fa-solid fa-chart-simple"></i></span>
+                                    </div>
+
+                                </div>
+                                <div className='show-quick-view'>
+                                    Quick View
+                                </div>
+                            </div>
+                            <div className='content col-2'>
+                                <div className='img-display'
+                                    onMouseOver={() => handleOnMouse('imgdefault')}
+                                    onMouseOut={() => handleOnMouse('imgdefault')}
+                                >
+
+                                    <img src={imgdefault === true ? crt1 : crt11} />
+                                </div>
+
+                                <div className='info-display'>
+                                    <span>[Uma Musume] Mr. C.B. - 1/7 Scale charater</span>
+                                    <div className='cost-display'>$178.99</div>
+                                    <div className='evaluate'>
+                                        <span ><i className=" icon-show fa-regular fa-heart"></i></span>
+                                        <button className='add-to-cart'>add to cart</button>
+                                        <span><i className=" icon-show fa-solid fa-chart-simple"></i></span>
+                                    </div>
+
+                                </div>
+                                <div className='show-quick-view'>
+                                    Quick View
+                                </div>
+                            </div> */}
                         </div>
                         <div className='content-last'><a href='/'>More-details</a></div>
                     </div>

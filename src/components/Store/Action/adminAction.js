@@ -1,6 +1,6 @@
 
 import actiontypes from "./actionType"
-import { fetchLimitBannerImg, fetchDataTypeProduct } from "../../../Services/ApiService";
+import { fetchLimitBannerImg, fetchDataTypeProduct, fetchLimitProductDisplay } from "../../../Services/ApiService";
 
 
 export const fetchLimitBanner = () => {
@@ -53,4 +53,70 @@ export const fetchTypeproduct = (data) => {
         }
     }
 
+}
+export const fetchLimitProductFigure = () => {
+    return async (dispatch, getState) => {
+        try {
+            let dataPro = await fetchLimitProductDisplay('6', 'Figure')
+            if (dataPro && dataPro.errCode === 0) {
+                dispatch({
+                    type: actiontypes.ADMIN_FETCH_PRODUCT_DISPLAY_SUCCESS,
+                    data: dataPro
+                })
+            } else {
+                dispatch({
+                    type: actiontypes.ADMIN_FETCH_PRODUCT_DISPLAY_FAIL,
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            dispatch({
+                type: actiontypes.ADMIN_FETCH_PRODUCT_DISPLAY_FAIL,
+            })
+        }
+    }
+}
+export const fetchLimitProductChar = () => {
+    return async (dispatch, getState) => {
+        try {
+            let dataChar = await fetchLimitProductDisplay('12', 'Character')
+            if (dataChar && dataChar.errCode === 0) {
+                dispatch({
+                    type: actiontypes.ADMIN_FETCH_PRODUCT_CHARACTER_SUCCESS,
+                    data: dataChar
+                })
+            } else {
+                dispatch({
+                    type: actiontypes.ADMIN_FETCH_PRODUCT_CHARACTER_FAIL,
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            dispatch({
+                type: actiontypes.ADMIN_FETCH_PRODUCT_CHARACTER_FAIL,
+            })
+        }
+    }
+}
+export const fetchLimitProductAni = () => {
+    return async (dispatch, getState) => {
+        try {
+            let dataAni = await fetchLimitProductDisplay('6', 'Anime')
+            if (dataAni && dataAni.errCode === 0) {
+                dispatch({
+                    type: actiontypes.ADMIN_FETCH_PRODUCT_ANIME_SUCCESS,
+                    data: dataAni
+                })
+            } else {
+                dispatch({
+                    type: actiontypes.ADMIN_FETCH_PRODUCT_ANIME_FAIL,
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            dispatch({
+                type: actiontypes.ADMIN_FETCH_PRODUCT_ANIME_FAIL,
+            })
+        }
+    }
 }

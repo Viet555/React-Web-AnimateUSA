@@ -22,8 +22,7 @@ const MainBanner = (props) => {
         dispatch(action.fetchLimitBanner())
     }, [])
 
-    console.log("checkDATABANER:", BannerImg[0])
-    console.log("checkDATABANER:", BannerImg)
+
     return (
 
         <>
@@ -36,8 +35,8 @@ const MainBanner = (props) => {
                                 let imageBuffer = ''
                                 imageBuffer = new Buffer(item.image, 'base64').toString('binary');
                                 return (
-                                    <div className='img-slider'>
-                                        <img key={index} src={imageBuffer} />
+                                    <div className='img-slider' key={index}>
+                                        <img src={imageBuffer} />
                                     </div>
                                 )
                             })
