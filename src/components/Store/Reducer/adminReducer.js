@@ -5,6 +5,7 @@ const INITIAL_STATE = {
     ProductFigure: [],
     ProductCharacter: [],
     ProductAnime: [],
+    AllProduct: []
 };
 const adminReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -75,6 +76,20 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 ProductAnime: []
+            };
+        //
+        case actiontypes.FETCH_ALL_PRODUCT_SUCCESS:
+            console.log('check data action ', action)
+
+            return {
+                ...state,
+                AllProduct: action.data.data,
+            };
+
+        case actiontypes.FETCH_ALL_PRODUCT_FAIL:
+            return {
+                ...state,
+                AllProduct: []
             };
         default: // need this for default case
             return state

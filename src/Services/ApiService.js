@@ -29,7 +29,11 @@ const AllDataProductByid = (inputId) => {
 const SaveDeltailProduct = (dataInput) => {
     return axios.post(`/api/Create-infor-Product`, dataInput);
 }
+const getAllProduct = () => {
+    return axios.get(`/api/get-detail-All-product`);
+}
+
 export {
     userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg,
-    fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay, getALLProductByType, AllDataProductByid, SaveDeltailProduct
+    fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay, getALLProductByType, AllDataProductByid, SaveDeltailProduct, getAllProduct
 }

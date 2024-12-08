@@ -4,16 +4,21 @@ import { toast } from "react-toastify"
 import { AddBannerImage } from "../../Services/ApiService"
 import ManagerProduct from "./ManagerProduct/ManagerProduct.js"
 import MarkDownProduct from "./MarkDown/MarkDownProduct.js"
-
+import TableManagerProduct from "./TableManagerProduc/TableManagerProduct.js"
+import { useDispatch } from "react-redux"
+import * as action from '../Store/export'
 const AdminManager = () => {
 
-
-
+    const disPatch = useDispatch()
     const [isshow, setIsShow] = useState(false)
 
     const handleShowModelAddImg = () => {
         setIsShow(!isshow)
     }
+
+    useEffect(() => {
+        disPatch(action.fetchAllDetailProduct())
+    }, [])
     const handleSaveAddBanner = async (data) => {
         if (!data.image) {
             toast.error("missing input Image parameters ")
@@ -31,7 +36,6 @@ const AdminManager = () => {
 
         // setIsShow(!isshow)
 
-
     }
     return (
         <>
@@ -41,6 +45,7 @@ const AdminManager = () => {
                 handleSaveAddBanner={handleSaveAddBanner}
 
             />
+            <TableManagerProduct />
             <ManagerProduct />
             <MarkDownProduct />
         </>
