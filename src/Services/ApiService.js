@@ -20,4 +20,16 @@ const createProductDisplay = (ProductData) => {
 const fetchLimitProductDisplay = (limitInput, typeInput) => {
     return axios.get(`/api/limit-Product-display?limitInput=${limitInput}&typeInput=${typeInput}`);
 }
-export { userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg, fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay }
+const getALLProductByType = (inputType) => {
+    return axios.get(`/api/get-all-product-by-type?inputType=${inputType}`);
+}
+const AllDataProductByid = (inputId) => {
+    return axios.get(`/api/all-Detail-product-byId?inputId=${inputId}`);
+}
+const SaveDeltailProduct = (dataInput) => {
+    return axios.post(`/api/Create-infor-Product`, dataInput);
+}
+export {
+    userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg,
+    fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay, getALLProductByType, AllDataProductByid, SaveDeltailProduct
+}

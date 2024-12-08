@@ -10,6 +10,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Provider } from 'react-redux';
 import { persistor, store } from './components/Store/ReduxStore';
 import { PersistGate } from 'redux-persist/integration/react';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 

@@ -28,7 +28,6 @@ const ManagerProduct = () => {
     useEffect(() => {
         let selecBuild = buildDataSelect(dataProduct)
         setOption(selecBuild)
-        console.log(selecBuild)
     }, [dataProduct])
 
     const buildDataSelect = (inputData) => {

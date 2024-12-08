@@ -3,6 +3,7 @@ import ImgSection from "./DisplayAdd/ImgSection"
 import { toast } from "react-toastify"
 import { AddBannerImage } from "../../Services/ApiService"
 import ManagerProduct from "./ManagerProduct/ManagerProduct.js"
+import MarkDownProduct from "./MarkDown/MarkDownProduct.js"
 
 const AdminManager = () => {
 
@@ -26,7 +27,6 @@ const AdminManager = () => {
             if (res & res.errCode !== 0) {
                 toast.error(res.message)
             }
-            console.log("check res", res)
         }
 
         // setIsShow(!isshow)
@@ -42,6 +42,7 @@ const AdminManager = () => {
 
             />
             <ManagerProduct />
+            <MarkDownProduct />
         </>
     )
 }
