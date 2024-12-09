@@ -7,3 +7,6 @@ export const CRUD_ACTION = {
     DELETE: "DELETE",
     READ: "CREATE"
 };
+export const ROUTE = {
+    DETAIL: "/Detail-Product/:id"
+};

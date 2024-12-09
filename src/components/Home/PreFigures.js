@@ -5,10 +5,13 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import * as action from '../Store/export'
 import { Buffer } from 'buffer'
-const PreFigures = () => {
+import { useNavigate } from 'react-router-dom'
+import { ROUTE } from '../../constant'
+const PreFigures = (props) => {
 
     const dispatch = useDispatch()
     const dataFigure = useSelector(state => state.admin.ProductFigure)
+    const navigate = useNavigate()
 
     const [listProduct, setListProduct] = useState([])
     const [imgdefault, setImgDefault] = useState(true)
@@ -23,7 +26,9 @@ const PreFigures = () => {
     useEffect(() => {
         setListProduct(dataFigure.data)
     }, [dataFigure])
-
+    const handleOnclickDetailProduct = (data) => {
+        navigate(`/Detail-Product/${data.id}`)
+    }
     return (
         <>
             <div className="container-figure col-12">
@@ -47,13 +52,16 @@ const PreFigures = () => {
                                                 onMouseOver={() => handleOnMouse()}
                                                 onMouseOut={() => handleOnMouse()}
                                                 value={imgdefault}
+                                                onClick={() => handleOnclickDetailProduct(item)}
                                             >
                                                 {/* <img src={imgdefault === true ? imageBuffer : imageBuffer} /> */}
                                                 <img src={imageBuffer} />
                                             </div>
 
                                             <div className='info-display'>
-                                                <span className='line-clamp'>{item.productName}</span>
+                                                <span className='line-clamp'
+                                                    onClick={() => handleOnclickDetailProduct(item)}
+                                                >{item.productName}</span>
                                                 <div className='cost-display'>${item.count}</div>
                                                 <div className='evaluate'>
                                                     <span ><i className=" icon-show fa-regular fa-heart"></i></span>

@@ -6,10 +6,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as action from '../Store/export'
 import _ from 'lodash'
 import { Buffer } from 'buffer'
+import { useNavigate } from 'react-router-dom'
 const AnimeExclusive = () => {
 
     const productAnime = useSelector((state => state.admin.ProductAnime))
     const dispatch = useDispatch()
+
+    const navigate = useNavigate()
 
     const [listProductAnime, setlistProductAnime] = useState([])
     const [imgdefault, setImgDefault] = useState(true)
@@ -27,7 +30,10 @@ const AnimeExclusive = () => {
         }
 
     }, [productAnime])
-    console.log('check data anime', productAnime)
+    const handleOnclickDetailProduct = (data) => {
+
+        navigate(`/Detail-Product/${data.id}`)
+    }
     return (
         <>
             <div className="container-AnimeExclusive col-12">
@@ -49,12 +55,13 @@ const AnimeExclusive = () => {
                                                 onMouseOver={() => handleOnMouse()}
                                                 onMouseOut={() => handleOnMouse()}
                                                 value={imgdefault}
+                                                onClick={() => handleOnclickDetailProduct(item)}
                                             >
                                                 <img src={imageBuffer} />
                                             </div>
 
                                             <div className='info-display'>
-                                                <span className='line-clamp'>{item.productName}</span>
+                                                <span className='line-clamp' onClick={() => handleOnclickDetailProduct(item)}>{item.productName}</span>
                                                 <div className='cost-display'>${item.count}</div>
                                                 <div className='evaluate'>
                                                     <span ><i className=" icon-show fa-regular fa-heart"></i></span>

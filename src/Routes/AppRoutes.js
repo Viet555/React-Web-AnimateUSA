@@ -8,7 +8,8 @@ import BuyAlotTour from "../components/BuylotTour/BuyAlotTour";
 import Register from "../components/Header/Login/Register";
 import ImgSection from "../components/Admin/DisplayAdd/ImgSection";
 import AdminManager from "../components/Admin/AdminManager";
-
+import { ROUTE } from "../constant";
+import DetailProduct from "../components/Home/DetailProduct/DetailProduct";
 const AppRoutes = () => {
 
     return (
@@ -22,6 +23,7 @@ const AppRoutes = () => {
                 <Route path="/New" element={<New />} />
                 <Route path="/TourbestSell" element={<BuyAlotTour />} />
                 <Route path="/AdminManager" element={<AdminManager />} />
+                <Route path={ROUTE.DETAIL} element={<DetailProduct />} />
             </Routes>
 
         </>

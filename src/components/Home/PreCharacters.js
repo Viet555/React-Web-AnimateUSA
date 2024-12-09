@@ -6,10 +6,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as action from '../Store/export'
 import { Buffer } from 'buffer'
 import _ from 'lodash'
+import { useNavigate } from 'react-router-dom'
 const PreCharacter = () => {
     const dispatch = useDispatch()
     const productChar = useSelector(state => state.admin.ProductCharacter)
-
+    const navigate = useNavigate()
     const [listProductChar, setListproductChar] = useState()
 
 
@@ -27,6 +28,9 @@ const PreCharacter = () => {
     const handleOnMouse = (newimg) => {
         setImgDefault(!imgdefault)
 
+    }
+    const handleOnclickDetailProduct = (data) => {
+        navigate(`/Detail-Product/${data.id}`)
     }
     return (
         <>
@@ -50,12 +54,13 @@ const PreCharacter = () => {
                                                 onMouseOver={() => handleOnMouse()}
                                                 onMouseOut={() => handleOnMouse()}
                                                 value={imgdefault}
+                                                onClick={() => handleOnclickDetailProduct(item)}
                                             >
                                                 <img src={imageBuffer} />
                                             </div>
 
                                             <div className='info-display'>
-                                                <span className='line-clamp'>{item.productName}</span>
+                                                <span className='line-clamp' onClick={() => handleOnclickDetailProduct(item)}>{item.productName}</span>
                                                 <div className='cost-display'>${item.count}</div>
                                                 <div className='evaluate'>
                                                     <span ><i className=" icon-show fa-regular fa-heart"></i></span>
