@@ -8,5 +8,6 @@ export const CRUD_ACTION = {
     READ: "CREATE"
 };
 export const ROUTE = {
-    DETAIL: "/Detail-Product/:id"
+    DETAIL: "/Detail-Product/:id",
+    MANAGE_USER: '/manager-CRUD-user'
 };

@@ -10,25 +10,51 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import 'react-image-lightbox/style.css';
+import { useSelector } from 'react-redux';
+import SliderAlsoPurchaSe from './SliderAlsoPurchaSe';
 let settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    Default: 3000,
+    responsive: [
+        {
+            breakpoint: 480, // Kích thước màn hình
+            settings: {
+                slidesToShow: 2, // Số lượng slide hiển thị
+                slidesToScroll: 2, // Số lượng slide cuộn
+            }
+        }
+    ]
 };
 
 const DetailProduct = (props) => {
     const navigator = useNavigate()
+    const AlsoPuchase = useSelector(state => state.admin.ProductCharacter)
+    const [dataAlsoPuchase, setDataAlsoPuchase] = useState([])
     const [dataProduct, setDataProduct] = useState([])
     const params = useParams()
     const [imagepro, setImagePro] = useState('')
+    // const [imageSliderProduct, setImageSliderProduct] = useState('')
     const [isOpen, setIsopen] = useState(false)
     useEffect(() => {
         handleGetDetailProduct()
-    }, [])
+    }, [params.id])
 
+    useEffect(() => {
+        if (AlsoPuchase) {
+            setDataAlsoPuchase(AlsoPuchase.data)
+        }
+        // if (dataAlsoPuchase && dataAlsoPuchase.length > 0) {
+        //     dataAlsoPuchase.map(item => {
+        //         dataAlsoPuchase.imageProduct = new Buffer(item.imageProduct, 'base64').toString('binary');
+
+        //     })
+        // }
+
+    }, [AlsoPuchase])
     const handleGetDetailProduct = async () => {
         if (params && params.id) {
             let id = params.id
@@ -45,15 +71,13 @@ const DetailProduct = (props) => {
         }
     }
     // const RenderHTML = (props) => (<span dangerouslySetInnerHTML={{ __html: dataProduct.markdown.contentHTML }}></span>)
-
-    console.log(dataProduct)
     return (
         <>
             <div className="DetailProDuct-container col-12">
                 <div className="container px-5">
                     <div className="header-content">
                         <i className="fa-solid fa-house" onClick={() => navigator('/')}></i><i className="fa-solid fa-chevron-right"></i>
-                        <span className='all-type'> Preorder_fig</span><i className="fa-solid fa-chevron-right"></i><span> [Jujutsu Kaisen] Yuji Itadori: Black Flash – Luminasta Figure</span>
+                        <span className='all-type'> {dataProduct.typeProducts}</span><i className="fa-solid fa-chevron-right"></i><span> {dataProduct.productName}</span>
                     </div>
                     <div className="detail-content-main">
                         <div className="content-left">
@@ -87,9 +111,11 @@ const DetailProduct = (props) => {
                                     <span>1</span>
                                     <span className='amount-plus'><i className="fa-solid fa-plus"></i></span>
                                 </div>
-                                <button className='add-to-cart'><i className="fa-solid fa-bag-shopping mx-2"></i>add to cart</button>
-                                <span className='icon'><i className=" icon-show fa-regular fa-heart"></i></span>
-                                <span className='icon'><i className=" icon-show fa-solid fa-chart-simple"></i></span>
+                                <div className='Cart'>
+                                    <button className='add-to-cart'><i className="fa-solid fa-bag-shopping mx-2"></i>add to cart</button>
+                                    <span className='iconic'><i className=" icon-show fa-regular fa-heart"></i></span>
+                                    <span className='iconic'><i className=" icon-show fa-solid fa-chart-simple"></i></span>
+                                </div>
                             </div>
 
 
@@ -130,20 +156,11 @@ const DetailProduct = (props) => {
 
                     </div>
                     <div className="content-last">
-                        <Slider {...settings}>
-
-                            {/* {BannerImg && BannerImg.length > 0 &&
-                                BannerImg.map((item, index) => {
-                                    let imageBuffer = ''
-                                    imageBuffer = new Buffer(item.image, 'base64').toString('binary');
-                                    return (
-                                        <div className='img-slider' key={index}>
-                                            <img src={imageBuffer} />
-                                        </div>
-                                    )
-                                })
-                            } */}
-                        </Slider>
+                        <SliderAlsoPurchaSe
+                            AlsoPuchase={dataAlsoPuchase}
+                            settings={settings}
+                        // imageSliderProduct={imageSliderProduct}
+                        />
                     </div>
 
                 </div>

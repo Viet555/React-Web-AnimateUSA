@@ -2,8 +2,8 @@ import axios from "../utils/CustomizeAxios";
 const userLogin = (email, password) => {
     return axios.post('/api/login', { email, password })
 }
-const CreateAccount = (email, password, firstName, lastName) => {
-    return axios.post('/api/create-new-user', { email, password, firstName, lastName },);
+const CreateAccount = (email, password, firstName, lastName, roleId) => {
+    return axios.post('/api/create-new-user', { email, password, firstName, lastName, roleId });
 }
 const AddBannerImage = (dataInput) => {
     return axios.post('/api/create-img-banner', dataInput);

@@ -1,0 +1,218 @@
+.img-display {
+    margin-bottom: 10px;
+    width: 90% !important;
+    position: relative;
+
+    img {
+        border: none;
+        padding: 6px;
+        transition: opacity .7s ease-in-out 0s;
+        height: 220px;
+        width: 100%;
+        transform: scale(1);
+        /* Giữ ảnh ở kích thước ban đầu */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        /* Thêm hiệu ứng chuyển đổi mượt mà */
+
+        /* Hiệu ứng mờ dần và trượt ảnh */
+        &:hover {
+            cursor: pointer;
+            /* Khi hover, ảnh sẽ mờ đi một chút */
+            transform: scale(1.05);
+            /* Phóng to nhẹ ảnh khi hover */
+        }
+    }
+
+
+    .info-display {
+
+        text-align: center;
+        font-weight: 600;
+
+        .line-clamp {
+            cursor: pointer;
+            display: -webkit-box;
+            /* Sử dụng định dạng khối linh hoạt */
+            -webkit-box-orient: vertical;
+            /* Hướng khối theo chiều dọc */
+            -webkit-line-clamp: 2;
+            /* Giới hạn hiển thị tối đa 2 dòng */
+            overflow: hidden;
+            /* Ẩn phần nội dung vượt quá */
+            text-overflow: ellipsis;
+            /* Thêm dấu "..." ở cuối */
+            word-break: break-word;
+            /* Bẻ từ nếu quá dài */
+        }
+
+        .cost-display {
+            margin-top: 5px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .evaluate {
+            margin-top: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            .icon-show {
+                border: 1px solid rgba(57, 56, 54, 0.329);
+                height: 35px;
+                width: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: translate(0, -4px);
+                }
+            }
+
+            .add-to-cart {
+
+                border: none;
+                background-color: rgb(237, 141, 24);
+                height: 35px;
+                min-width: 109px;
+                color: azure;
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 600;
+
+
+                &:hover {
+                    transition: .3s;
+                    background-color: #395fab;
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: 2px 2px #888888;
+            transform: translate(0, 5px);
+            background-color: rgb(255, 255, 255);
+        }
+
+        &:hover .icon-show {
+            opacity: 1;
+        }
+    }
+
+    .show-quick-view {
+
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 13px;
+        display: flex;
+        position: absolute;
+        top: 42%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(80, 161, 237, 0.911);
+        height: 47px;
+        opacity: 0;
+
+
+        &:hover {
+            top: 45%;
+            cursor: pointer;
+            background-color: rgb(80, 161, 237);
+        }
+    }
+
+    &:hover .info-display {
+        padding: 10px;
+        box-shadow: 2px 2px #888888;
+        transform: translate(0, 5px);
+        background-color: rgb(255, 255, 255);
+
+    }
+
+    &:hover .info-display .icon-show {
+        opacity: 1;
+    }
+
+    &:hover .show-quick-view {
+        top: 45%;
+        opacity: 1;
+
+    }
+
+    &:hover .info-display .evaluate .add-to-cart {
+        background-color: #395fab;
+    }
+}
+
+@media (max-width: 768px) {
+    .img-display {
+        width: 100% !important;
+
+        img {
+            width: 100%;
+            height: 140px;
+        }
+
+        .info-display {
+            font-size: 14px;
+
+            /* Giảm kích thước chữ */
+            .cost-display {
+                font-size: 18px;
+            }
+
+            .evaluate {
+                flex-direction: column;
+                /* Chuyển layout dọc */
+                gap: 10px;
+
+                .add-to-cart {
+                    min-width: 90px;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .show-quick-view {
+            font-size: 11px;
+            /* Giảm kích thước chữ */
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .img-display {
+        img {
+            flex-wrap: wrap;
+            height: auto;
+            /* Đảm bảo hình ảnh không vượt quá chiều rộng màn hình */
+        }
+
+        .info-display {
+            font-size: 12px;
+
+            /* Giảm thêm kích thước chữ */
+            .cost-display {
+                font-size: 16px;
+            }
+
+            .evaluate {
+                .icon-show {
+                    display: none;
+                }
+            }
+        }
+
+        .show-quick-view {
+            font-size: 10px;
+            /* Giảm kích thước chữ */
+            height: 40px;
+        }
+    }
+}

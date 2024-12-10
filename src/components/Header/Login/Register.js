@@ -8,6 +8,7 @@ const Register = () => {
     const [password, setpassword] = useState('')
     const [firstName, setfirstName] = useState('')
     const [lastName, setlastName] = useState('')
+    const [roleId, setRoleId] = useState('')
     const [hiddenpassword, sethiddenpassword] = useState(true)
     const [loading, setloading] = useState(false)
     const handleOnclickeye = () => {
@@ -18,7 +19,7 @@ const Register = () => {
     const handleCreateAccount = async () => {
         try {
 
-            const res = await CreateAccount(email, password, firstName, lastName)
+            const res = await CreateAccount(email, password, firstName, lastName, roleId)
             if (res && res.errcode === -1) {
                 toast.error(res.message)
                 return

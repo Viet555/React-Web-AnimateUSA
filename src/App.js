@@ -7,7 +7,9 @@ import AppRoutes from './Routes/AppRoutes';
 import FooterApp from './components/FooterApp';
 import Banner from './components/Home/Banner/Banner';
 import Dropmenu from './components/Home/MenuDrop/Dropmenu';
+import { useNavigate } from 'react-router-dom';
 function App() {
+
   return (
     <header className="App-container">
       <div className='App-header'>

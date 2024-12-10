@@ -10,6 +10,7 @@ import ImgSection from "../components/Admin/DisplayAdd/ImgSection";
 import AdminManager from "../components/Admin/AdminManager";
 import { ROUTE } from "../constant";
 import DetailProduct from "../components/Home/DetailProduct/DetailProduct";
+import ManagerUser from "../components/Admin/ManagerUser/ManagerUser";
 const AppRoutes = () => {
 
     return (
@@ -24,6 +25,8 @@ const AppRoutes = () => {
                 <Route path="/TourbestSell" element={<BuyAlotTour />} />
                 <Route path="/AdminManager" element={<AdminManager />} />
                 <Route path={ROUTE.DETAIL} element={<DetailProduct />} />
+                <Route path={ROUTE.MANAGE_USER} element={<ManagerUser />} />
+
             </Routes>
 
         </>

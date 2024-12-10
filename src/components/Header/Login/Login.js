@@ -35,7 +35,7 @@ const Login = (props) => {
 
             if (res && res.errcode === 0) {
                 ditpatch(UserLoginSuccess(res))
-                toast.success(res.message)
+                toast.success('Login Success')
                 console.log(res)
                 navigate('/')
             }

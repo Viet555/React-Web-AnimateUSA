@@ -16,11 +16,11 @@ const Home = () => {
     let settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 600,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true, // Enable autoplay
-        autoplaySpeed: 3000,     // Set the interval to 3 seconds
+        autoplaySpeed: 5000,     // Set the interval to 3 seconds
         pauseOnHover: true,      // Pause autoplay when hovered
         pauseOnFocus: true,      // Pause autoplay when the slider is in focus
     };

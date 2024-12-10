@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Buffer } from "buffer";
 const MainBanner = (props) => {
-    const settings = props
+    const { settings } = props
     const dispatch = useDispatch()
     const BannerImg = useSelector(state => state.admin.BannerData)
 
@@ -32,6 +32,7 @@ const MainBanner = (props) => {
                                 return (
                                     <div className='img-slider' key={index}>
                                         <img src={imageBuffer} />
+
                                     </div>
                                 )
                             })
