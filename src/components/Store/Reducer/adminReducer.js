@@ -5,7 +5,9 @@ const INITIAL_STATE = {
     ProductFigure: [],
     ProductCharacter: [],
     ProductAnime: [],
-    AllProduct: []
+    AllProduct: [],
+    DataGender: [],
+    listUser: []
 };
 const adminReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -90,6 +92,34 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 AllProduct: []
+            };
+
+        case actiontypes.FETCH_DATA_ALLCODES_GENDER_SUCCESS:
+            console.log('check data action ', action)
+
+            return {
+                ...state,
+                DataGender: action.data,
+            };
+
+        case actiontypes.FETCH_DATA_ALLCODES_GENDER_FAIL:
+            return {
+                ...state,
+                DataGender: []
+            };
+
+        case actiontypes.FETCH_ALL_USER_SUCCESS:
+            console.log('check data action ', action)
+
+            return {
+                ...state,
+                listUser: action.data.data,
+            };
+
+        case actiontypes.FETCH_ALL_USER_FAIL:
+            return {
+                ...state,
+                listUser: []
             };
         default: // need this for default case
             return state

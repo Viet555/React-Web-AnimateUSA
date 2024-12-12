@@ -13,6 +13,7 @@ const SliderAlsoPurchaSe = (props) => {
     }
     return (
         <>
+            <span style={{ fontWeight: '700', fontSize: '20px', }}>Also Purchased</span>
             <Slider {...settings}>
 
                 {AlsoPuchase && AlsoPuchase.length > 0 &&

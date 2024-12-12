@@ -2,8 +2,8 @@ import axios from "../utils/CustomizeAxios";
 const userLogin = (email, password) => {
     return axios.post('/api/login', { email, password })
 }
-const CreateAccount = (email, password, firstName, lastName, roleId) => {
-    return axios.post('/api/create-new-user', { email, password, firstName, lastName, roleId });
+const CreateAccount = (email, password, firstName, lastName, roleId, image, gender, address) => {
+    return axios.post('/api/create-new-user', { email, password, firstName, lastName, roleId, image, gender, address });
 }
 const AddBannerImage = (dataInput) => {
     return axios.post('/api/create-img-banner', dataInput);
@@ -32,8 +32,17 @@ const SaveDeltailProduct = (dataInput) => {
 const getAllProduct = () => {
     return axios.get(`/api/get-detail-All-product`);
 }
-
+const DeleteUserById = (id) => {
+    return axios.delete(`/api/delete-user`, { data: { id } });
+}
+const fetchAllUserTabel = () => {
+    return axios.get(`/api/get-all-user`);
+}
+const handleUpdateUserByAdmin = (id, firstName, lastName, roleId, address, gender, image) => {
+    return axios.put(`/api/update-user-admin`, { id, firstName, lastName, roleId, address, gender, image });
+}
 export {
     userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg,
-    fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay, getALLProductByType, AllDataProductByid, SaveDeltailProduct, getAllProduct
+    fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay, getALLProductByType, AllDataProductByid, DeleteUserById,
+    SaveDeltailProduct, getAllProduct, fetchAllUserTabel, handleUpdateUserByAdmin
 }

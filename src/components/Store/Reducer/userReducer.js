@@ -5,10 +5,13 @@ const INITIAL_STATE = {
         // refresh_token: "",
         email: "",
         image: "",
-        role: "",
+        roleId: "",
         username: "",
         firstName: '',
-        lastName: ''
+        lastName: '',
+        gender: '',
+        address: '',
+
     },
     isauthentic: false
 };
@@ -22,10 +25,12 @@ const userReducer = (state = INITIAL_STATE, action) => {
                     // access_token: action?.payload?.DT?.access_token,
                     // refresh_token: action?.payload?.DT?.refresh_token,
                     email: action?.data?.userData.email,
-                    // image: action?.payload?.DT?.image,
-                    role: action?.data?.data?.userData.roleId,
+                    image: action?.data?.data?.userData.image,
+                    roleId: action?.data?.userData.roleId,
                     firstName: action?.data?.userData.firstname,
-                    lastName: action?.data?.userData.lastname
+                    lastName: action?.data?.userData.lastname,
+                    gender: action?.data?.userData.gender,
+                    address: action?.data?.userData.address,
                 },
                 isauthentic: true
             };

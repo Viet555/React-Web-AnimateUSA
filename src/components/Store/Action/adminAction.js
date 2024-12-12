@@ -1,6 +1,6 @@
 
 import actiontypes from "./actionType"
-import { fetchLimitBannerImg, fetchDataTypeProduct, fetchLimitProductDisplay, getAllProduct } from "../../../Services/ApiService";
+import { fetchLimitBannerImg, fetchDataTypeProduct, fetchLimitProductDisplay, getAllProduct, fetchAllUserTabel } from "../../../Services/ApiService";
 
 
 export const fetchLimitBanner = () => {
@@ -139,6 +139,50 @@ export const fetchAllDetailProduct = () => {
             console.log(e)
             dispatch({
                 type: actiontypes.FETCH_ALL_PRODUCT_FAIL,
+            })
+        }
+    }
+}
+export const dataGenderAllcodes = (input) => {
+    return async (dispatch, getState) => {
+        try {
+            let dataGender = await fetchDataTypeProduct('GENDER')
+            if (dataGender && dataGender.errCode === 0) {
+                dispatch({
+                    type: actiontypes.FETCH_DATA_ALLCODES_GENDER_SUCCESS,
+                    data: dataGender
+                })
+            } else {
+                dispatch({
+                    type: actiontypes.FETCH_DATA_ALLCODES_GENDER_FAIL,
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            dispatch({
+                type: actiontypes.FETCH_DATA_ALLCODES_GENDER_FAIL,
+            })
+        }
+    }
+}
+export const FetchAllUser = () => {
+    return async (dispatch, getState) => {
+        try {
+            let dataUser = await fetchAllUserTabel()
+            if (dataUser && dataUser.errCode === 0) {
+                dispatch({
+                    type: actiontypes.FETCH_ALL_USER_SUCCESS,
+                    data: dataUser
+                })
+            } else {
+                dispatch({
+                    type: actiontypes.FETCH_ALL_USER_FAIL,
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            dispatch({
+                type: actiontypes.FETCH_ALL_USER_FAIL,
             })
         }
     }
