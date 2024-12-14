@@ -1,0 +1,15 @@
+.img-preview {
+    border: 1px dashed;
+    height: 7rem;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+
+    img {
+        width: 200px;
+        height: 100%;
+        border-radius: 50%;
+
+    }
+}

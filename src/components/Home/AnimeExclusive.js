@@ -50,7 +50,7 @@ const AnimeExclusive = () => {
                                     let imageBuffer = ''
                                     imageBuffer = new Buffer(item.imageProduct, 'base64').toString('binary');
                                     return (
-                                        <div className='content col-2' key={index}>
+                                        <div className='content col-3 ' key={index}>
                                             <div className='img-display'
                                                 onMouseOver={() => handleOnMouse()}
                                                 onMouseOut={() => handleOnMouse()}

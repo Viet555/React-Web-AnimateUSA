@@ -158,7 +158,7 @@ const CRUDuser = (props) => {
                         />
                     </div>
 
-                    <div className="form-group col-4 my-2">
+                    <div className="form-group col-4 my-4">
                         <>
 
                             <label htmlFor="imageProduct" className='Add-Image'>Image</label>

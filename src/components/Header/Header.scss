@@ -29,11 +29,20 @@
         gap: 10px;
 
 
+
         .header__option {
             color: #777 !important;
             font-size: 11px;
 
             margin-top: 4px;
+
+            .header-drop {
+                &:hover {
+                    background-color: #3b5a9a;
+                    color: #fffbfb !important;
+                    transition: .3s;
+                }
+            }
         }
 
         .Social-content {

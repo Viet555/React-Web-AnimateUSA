@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
-import ImgSection from "./DisplayAdd/ImgSection"
+import ImgSection from "./DisplayAdd/ImgSection.js"
 import { toast } from "react-toastify"
-import { AddBannerImage } from "../../Services/ApiService"
+import { AddBannerImage } from "../../Services/ApiService.js"
 import ManagerProduct from "./ManagerProduct/ManagerProduct.js"
 import MarkDownProduct from "./MarkDown/MarkDownProduct.js"
 import TableManagerProduct from "./TableManagerProduc/TableManagerProduct.js"
 import { useDispatch } from "react-redux"
-import * as action from '../Store/export'
+import * as action from '../Store/export.js'
 const AdminManager = () => {
 
     const disPatch = useDispatch()

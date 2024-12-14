@@ -9,6 +9,7 @@ import { NavItem } from 'react-bootstrap';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as action from '../Store/export'
+import { ROUTE } from '../../constant';
 
 const Header = () => {
     const dispatch = useDispatch()
@@ -25,17 +26,28 @@ const Header = () => {
                                 <Nav className="me-auto">
                                     <span className='text-left-header'> Official retailer of anime goods in the U.S. and Canada!</span>
 
-                                    {userInfo && userInfo.role === 'Admin' &&
-                                        <div>
-                                            <NavLink href="/manager-CRUD-user" className="header__option nav-link ">2 </NavLink>
-                                        </div>
-                                    }
                                 </Nav>
 
                                 <Nav className='nav__header-option'>
+
                                     <NavLink to='/login' className='header__option nav-link option-login'> {userInfo && userInfo.firstName ? userInfo.firstName : "Sign In / Register"}</NavLink>
-                                    <Nav.Link href="#link" className="header__option ">Account </Nav.Link>
-                                    <Nav.Link href="#link" className="header__option ">Blog</Nav.Link>
+                                    {userInfo && userInfo.roleId === 'Admin' ?
+                                        <>
+                                            <NavLink to="/manager-CRUD-user" className="header__option  nav-link ">ManagerUser </NavLink>
+
+                                            <NavDropdown title="Product" id="basic-nav-dropdown" className='header__option  '>
+                                                <NavLink to={ROUTE.MANAGER_PRODUCT} className="header__option  nav-link header-drop" > Manager Product </NavLink>
+                                                {/* <NavLink to={ROUTE.MANAGER_MARKDOWN} className="header__option  nav-link header-drop ">MarkDown Product </NavLink>
+                                                <NavLink to={ROUTE.MANAGER_ADD_BANNER} className="header__option  nav-link header-drop">Banner Display </NavLink>
+                                                <NavLink to={ROUTE.MANAGER_TABLE_PRODUCT} className="header__option  nav-link header-drop"> Table Product </NavLink> */}
+                                            </NavDropdown>
+                                        </>
+                                        :
+                                        <>
+                                            <Nav.Link href="#link" className="header__option ">Account </Nav.Link>
+                                            <Nav.Link href="#link" className="header__option ">Blog</Nav.Link>
+                                        </>
+                                    }
                                     <NavLink to="/New" className="header__option nav-link ">My Wishlist</NavLink>
                                     <NavLink to="/New" className="header__option nav-link ">Help</NavLink>
                                     <div className='Social-content'>

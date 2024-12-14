@@ -7,9 +7,10 @@ import { handleUpdateUserByAdmin } from "../../../Services/ApiService"
 import { toast } from "react-toastify"
 import * as action from '../../Store/export'
 import Select from 'react-select';
+import './ModalEditUser.scss'
 const ModalEditUser = (props) => {
     const disPatch = useDispatch()
-    const { show, setShow, dataUserEdit, dataRole, dataGender } = props
+    const { show, setShow, dataUserEdit, dataRole, dataGender, imageBuffer } = props
     const [dataUser, setDataUser] = useState()
 
     const handleClose = () => {
@@ -42,9 +43,12 @@ const ModalEditUser = (props) => {
             setEmail(dataUserEdit.email)
             setGender(dataUserEdit.gender)
             setAddress(dataUserEdit.address)
-            setImagePreview(dataUserEdit.image)
+
             setImage(dataUserEdit.image)
 
+        }
+        if (imageBuffer) {
+            setImagePreview(imageBuffer)
         }
 
     }, [dataUserEdit])
@@ -69,8 +73,6 @@ const ModalEditUser = (props) => {
             reader.readAsDataURL(event.target.files[0]);
         }
     }
-
-    console.log(imagePreview)
     return (
         <>
             <Modal
@@ -148,10 +150,10 @@ const ModalEditUser = (props) => {
 
                         </div>
 
-                        <div className='img-preview col-3 mt-4 t' >
+                        <div className='img-preview col-3 mt-4 ' >
 
                             {imagePreview ?
-                                <img src={imagePreview} style={{ width: '100%', height: "180px", borderRadius: "50%" }} />
+                                <img src={imagePreview} />
 
                                 :
                                 <span >preview Img</span>

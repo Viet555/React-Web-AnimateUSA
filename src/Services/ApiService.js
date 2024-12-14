@@ -41,8 +41,11 @@ const fetchAllUserTabel = () => {
 const handleUpdateUserByAdmin = (id, firstName, lastName, roleId, address, gender, image) => {
     return axios.put(`/api/update-user-admin`, { id, firstName, lastName, roleId, address, gender, image });
 }
+const handleGetAllProductNew = () => {
+    return axios.get('/api/get-all-product-new',);
+}
 export {
     userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg,
     fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay, getALLProductByType, AllDataProductByid, DeleteUserById,
-    SaveDeltailProduct, getAllProduct, fetchAllUserTabel, handleUpdateUserByAdmin
+    SaveDeltailProduct, getAllProduct, fetchAllUserTabel, handleUpdateUserByAdmin, handleGetAllProductNew
 }

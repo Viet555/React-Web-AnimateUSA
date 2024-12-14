@@ -48,15 +48,14 @@ const TableUser = (props) => {
                         <th>Address</th>
                         <th>Role</th>
                         <th>Image</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {listUser && listUser.length > 0 &&
                         listUser.map((item, index) => {
-                            if (item.image) {
-                                let imgBuffer = ''
-                                imgBuffer = new Buffer(item.image, 'base64').toString('binary');
-                            }
+                            let imageBuffer = ''
+                            imageBuffer = new Buffer(item.image, 'base64').toString('binary');
                             return (
 
                                 <tr key={`table-user-manager${index}`}>
@@ -67,6 +66,7 @@ const TableUser = (props) => {
                                     <td>{item.gender}</td>
                                     <td>{item.address}</td>
                                     <td>{item.roleId}</td>
+                                    <td><img src={imageBuffer} style={{ width: "60px" }}></img></td>
                                     <td>
                                         <div className='action-btn '>
                                             <button
@@ -75,10 +75,10 @@ const TableUser = (props) => {
                                             >
                                                 <i className="fa-solid fa-trash-can "></i></button>
                                             <button className='btn btn-warning px-3'
-                                                onClick={() => handleEditUser(item)}
+                                                onClick={() => handleEditUser(item, imageBuffer)}
                                             ><i className="fa-solid fa-pen-to-square "></i></button></div>
                                     </td>
-                                    {/* <td><img className="img-tabel " style={{ width: "60px" }} src={imgBuffer} /></td> */}
+
                                 </tr>
                             )
                         })

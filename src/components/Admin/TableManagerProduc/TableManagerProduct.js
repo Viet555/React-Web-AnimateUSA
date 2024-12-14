@@ -23,7 +23,7 @@ const TableManagerProduct = () => {
     }
     return (
         <>
-            <div className=" my-4 text-center " style={{ fontSize: '25px', fontWeight: '600' }}>
+            <div className=" my-4 text-center " style={{ fontSize: '25px', fontWeight: '600', textTransform: "uppercase" }}>
                 Manage users
             </div>
             <div className='table-user my-3  mx-4 '>
@@ -71,11 +71,11 @@ const TableManagerProduct = () => {
                                             <div className='action-btn '>
                                                 <button
                                                     className='btn btn-danger mx-3 px-3'
-                                                    onClick={() => this.handleDeleteUser(item)}
+                                                // onClick={() => this.handleDeleteUser(item)}
                                                 >
                                                     <i className="fa-solid fa-trash-can "></i></button>
                                                 <button className='btn btn-warning px-3'
-                                                    onClick={() => this.handleEditUser(item)}
+                                                // onClick={() => this.handleEditUser(item)}
                                                 ><i className="fa-solid fa-pen-to-square "></i></button></div>
                                         </td>
                                         <td><img className="img-tabel " style={{ width: "60px" }} src={imageBuffer} /></td>

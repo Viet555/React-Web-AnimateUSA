@@ -11,6 +11,7 @@ const ManagerUser = () => {
 
     const [isshow, setIsShow] = useState(false)
     const [dataUserEdit, setDataUserEdit] = useState({})
+    const [imageBuffer, setImageBuffer] = useState('')
     const [dataRole, setDataRole] = useState([])
     const [dataGender, setDataGender] = useState([])
     const dispatch = useDispatch()
@@ -50,11 +51,11 @@ const ManagerUser = () => {
             console.log(e)
         }
     }
-    const handleEditUser = (user) => {
+    const handleEditUser = (user, imageBuffer) => {
         setIsShow(!isshow)
         console.log(user)
         setDataUserEdit(user)
-
+        setImageBuffer(imageBuffer)
     }
 
     return (
@@ -70,6 +71,7 @@ const ManagerUser = () => {
                 dataUserEdit={dataUserEdit}
                 show={isshow}
                 dataRole={dataRole}
+                imageBuffer={imageBuffer}
                 dataGender={dataGender}
             />
         </>

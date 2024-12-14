@@ -9,5 +9,13 @@ export const CRUD_ACTION = {
 };
 export const ROUTE = {
     DETAIL: "/Detail-Product/:id",
-    MANAGE_USER: '/manager-CRUD-user'
+    MANAGE_USER: '/manager-CRUD-user',
+    MANAGER_PRODUCT: '/manager-product',
+
+    //
+    NEW_ARRIVALS: '/new-arrivals-product'
+    // MANAGER_MARKDOWN: '/Markdown-product',
+    // MANAGER_ADD_BANNER: '/managerBanner-display',
+    // MANAGER_TABLE_PRODUCT: '/manager-table-product'
+
 };

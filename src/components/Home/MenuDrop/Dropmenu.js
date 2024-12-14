@@ -1,8 +1,11 @@
 
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Dropmenu.scss'
-import { NavLink } from 'react-bootstrap';
+import { Nav, } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
+
+import { ROUTE } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const Dropmenu = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -23,22 +26,26 @@ const Dropmenu = () => {
     }, []);
     return (
         <>
+
             {isScrolled === false ?
                 <div className='Menu-container'>
                     <div className='Main-menu'>
-                        <NavLink to="/" className='menu-drop'>
+                        <NavLink to="/" className='menu-drop nav-link'>
                             Event Schedule
                         </NavLink>
-                        <NavLink to="/" className='menu-drop'>
+                        <NavLink to="/" className='menu-drop nav-link'>
                             Shop by Series
                         </NavLink>
-                        <NavLink to="/" className='menu-drop'>
+
+                        <NavLink to='/new-arrivals-product' className='menu-drop nav-link'>
                             New Arrivals
+
                         </NavLink>
-                        <NavLink to="/" className='menu-drop'>
+
+                        <NavLink to="/" className='menu-drop nav-link'>
                             Pre-orders
                         </NavLink>
-                        <NavLink to="/" className='menu-drop'>
+                        <NavLink to="/" className='menu-drop nav-link'>
                             animate Exclusive
                         </NavLink>
                         <NavDropdown title="Character Goods" id="basic-nav-dropdown" className='menu-drop'>
@@ -73,19 +80,19 @@ const Dropmenu = () => {
                 : <div className='Menu-container scroll-menu'>
                     <div className='Main-menu scroll-menu-main'>
 
-                        <NavLink to="/" className='menu-drop'>
+                        <NavLink to="/" className='menu-drop  nav-link'>
                             Event Schedule
                         </NavLink>
-                        <NavLink to="/" className='menu-drop'>
+                        <NavLink to="/" className='menu-drop nav-link'>
                             Shop by Series
                         </NavLink>
-                        <NavLink to="/" className='menu-drop'>
+                        <NavLink to='/new-arrivals-product' className='menu-drop nav-link'>
                             New Arrivals
                         </NavLink>
-                        <NavLink to="/" className='menu-drop'>
+                        <NavLink to="/" className='menu-drop nav-link'>
                             Pre-orders
                         </NavLink>
-                        <NavLink to="/" className='menu-drop'>
+                        <NavLink to="/" className='menu-drop nav-link'>
                             animate Exclusive
                         </NavLink>
                         <NavDropdown title="Character Goods" id="basic-nav-dropdown" className='menu-drop'>

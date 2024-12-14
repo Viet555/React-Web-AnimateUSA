@@ -7,7 +7,8 @@ const INITIAL_STATE = {
     ProductAnime: [],
     AllProduct: [],
     DataGender: [],
-    listUser: []
+    listUser: [],
+    listProductNew: []
 };
 const adminReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -25,7 +26,7 @@ const adminReducer = (state = INITIAL_STATE, action) => {
                 BannerData: ""
             };
         case actiontypes.ADMIN_FETCH_TYPE_PRODUCT_SUCCESS:
-            console.log('check data action ', action)
+
 
             return {
                 ...state,
@@ -39,7 +40,7 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             };
 
         case actiontypes.ADMIN_FETCH_PRODUCT_DISPLAY_SUCCESS:
-            console.log('check data action ', action)
+
 
             return {
                 ...state,
@@ -53,7 +54,7 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             };
 
         case actiontypes.ADMIN_FETCH_PRODUCT_CHARACTER_SUCCESS:
-            console.log('check data action ', action)
+
 
             return {
                 ...state,
@@ -67,7 +68,7 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             };
 
         case actiontypes.ADMIN_FETCH_PRODUCT_ANIME_SUCCESS:
-            console.log('check data action ', action)
+
 
             return {
                 ...state,
@@ -81,7 +82,7 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             };
         //
         case actiontypes.FETCH_ALL_PRODUCT_SUCCESS:
-            console.log('check data action ', action)
+
 
             return {
                 ...state,
@@ -95,7 +96,7 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             };
 
         case actiontypes.FETCH_DATA_ALLCODES_GENDER_SUCCESS:
-            console.log('check data action ', action)
+
 
             return {
                 ...state,
@@ -109,7 +110,6 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             };
 
         case actiontypes.FETCH_ALL_USER_SUCCESS:
-            console.log('check data action ', action)
 
             return {
                 ...state,
@@ -120,6 +120,20 @@ const adminReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 listUser: []
+            };
+        //product data
+
+        case actiontypes.FECTH_ALL_PRODUCT_NEW_SUCCESS:
+
+            return {
+                ...state,
+                listProductNew: action.data.data,
+            };
+
+        case actiontypes.FECTH_ALL_PRODUCT_NEW_FAIL:
+            return {
+                ...state,
+                listProductNew: []
             };
         default: // need this for default case
             return state

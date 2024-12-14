@@ -1,6 +1,6 @@
 
 import actiontypes from "./actionType"
-import { fetchLimitBannerImg, fetchDataTypeProduct, fetchLimitProductDisplay, getAllProduct, fetchAllUserTabel } from "../../../Services/ApiService";
+import { fetchLimitBannerImg, fetchDataTypeProduct, fetchLimitProductDisplay, getAllProduct, fetchAllUserTabel, handleGetAllProductNew } from "../../../Services/ApiService";
 
 
 export const fetchLimitBanner = () => {
@@ -183,6 +183,29 @@ export const FetchAllUser = () => {
             console.log(e)
             dispatch({
                 type: actiontypes.FETCH_ALL_USER_FAIL,
+            })
+        }
+    }
+}
+
+export const FetchAllProductNew = () => {
+    return async (dispatch, getState) => {
+        try {
+            let dataPro = await handleGetAllProductNew()
+            if (dataPro && dataPro.errCode === 0) {
+                dispatch({
+                    type: actiontypes.FECTH_ALL_PRODUCT_NEW_SUCCESS,
+                    data: dataPro
+                })
+            } else {
+                dispatch({
+                    type: actiontypes.FECTH_ALL_PRODUCT_NEW_FAIL,
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            dispatch({
+                type: actiontypes.FECTH_ALL_PRODUCT_NEW_FAIL,
             })
         }
     }
