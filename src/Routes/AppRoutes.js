@@ -4,7 +4,7 @@ import Home from "../components/Home/Home";
 import IntroDuce from "../components/IntroDuce";
 import Header from "../components/Header/Header";
 import New from "../components/New/New";
-import BuyAlotTour from "../components/BuylotTour/BuyAlotTour";
+
 import Register from "../components/Header/Login/Register";
 import ImgSection from "../components/Admin/DisplayAdd/ImgSection";
 
@@ -15,7 +15,11 @@ import ManagerProduct from "../components/Admin/ManagerProduct/ManagerProduct";
 import MarkDownProduct from "../components/Admin/MarkDown/MarkDownProduct";
 import TableManagerProduct from "../components/Admin/TableManagerProduc/TableManagerProduct";
 import AdminManager from "../components/Admin/AdminProduct";
-import NewArrivals from "../components/Home/NewArrial/NewArrivals";
+import NewArrivals from "../components/Home/MenuDrop/NewArrial/NewArrivals";
+import AnimeExclusive from "../components/Home/MenuDrop/AnimeExclusive/AnimeExclusive";
+import PreOrder from "../components/Home/MenuDrop/PreOrder/PreOrder";
+import Blog from "../components/Home/Blog/Blog";
+
 const AppRoutes = () => {
 
     return (
@@ -27,15 +31,18 @@ const AppRoutes = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/IntroDuce" element={<IntroDuce />} />
                 <Route path="/New" element={<New />} />
-                <Route path="/TourbestSell" element={<BuyAlotTour />} />
+
                 <Route path={ROUTE.MANAGER_PRODUCT} element={<AdminManager />} />
 
                 <Route path={ROUTE.DETAIL} element={<DetailProduct />} />
                 <Route path={ROUTE.MANAGE_USER} element={<ManagerUser />} />
 
                 <Route path={ROUTE.NEW_ARRIVALS} element={<NewArrivals />} />
+                <Route path={ROUTE.ANIME_EXCLUSIVE} element={<AnimeExclusive />} />
+                <Route path={ROUTE.PRE_ORDERS} element={<PreOrder />} />
 
 
+                <Route path={ROUTE.BLOG} element={<Blog />} />
 
             </Routes>
 

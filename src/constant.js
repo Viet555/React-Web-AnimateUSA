@@ -13,7 +13,13 @@ export const ROUTE = {
     MANAGER_PRODUCT: '/manager-product',
 
     //
-    NEW_ARRIVALS: '/new-arrivals-product'
+    NEW_ARRIVALS: '/new-arrivals-product',
+    ANIME_EXCLUSIVE: '/all-anime-exclusive',
+    PRE_ORDERS: '/all-product-preorder',
+
+    //
+    BLOG: '/Blog'
+
     // MANAGER_MARKDOWN: '/Markdown-product',
     // MANAGER_ADD_BANNER: '/managerBanner-display',
     // MANAGER_TABLE_PRODUCT: '/manager-table-product'

@@ -1,32 +1,26 @@
 import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import * as action from '../../Store/export'
+import { getALLProductByType } from "../../../../Services/ApiService"
 import { Buffer } from "buffer"
-import './NewArrivals.scss'
+import '../NewArrial/NewArrivals.scss'
 import { useNavigate } from "react-router-dom"
-const NewArrivals = () => {
-    const navigator = useNavigate()
-    const disPatch = useDispatch()
-    const dataProduct = useSelector(state => state.admin.listProductNew)
-    const [listProductNew, setListProductNew] = useState()
-
+const AnimeExclusive = () => {
+    const [allProductAnime, setAllProductAnime] = useState()
+    const navigate = useNavigate()
     useEffect(() => {
-        disPatch(action.FetchAllProductNew())
+        handleGetAllProductAnime()
     }, [])
 
-
-
-    useEffect(() => {
-        if (dataProduct) {
-            setListProductNew(dataProduct)
+    const handleGetAllProductAnime = async () => {
+        let res = await getALLProductByType('Anime')
+        if (res && res.errCode === 0 && res.data) {
+            setAllProductAnime(res.data)
         }
-    }, [dataProduct])
-
-    const handleOnclickDetailProduct = (data) => {
-
-        navigator(`/Detail-Product/${data.id}`)
-
     }
+    console.log(allProductAnime)
+    const handleOnclickDetailProduct = (data) => {
+        navigate(`/Detail-Product/${data.id}`)
+    }
+
     return (
         <>
 
@@ -34,19 +28,19 @@ const NewArrivals = () => {
                 <div className="container">
                     <div className="header-content">
                         <i className="fa-solid fa-house" onClick={() => navigator('/')}></i><i className="fa-solid fa-chevron-right"></i>
-                        <span className='all-type'>New Items </span>
+                        <span className='all-type'>Exclusive Item </span>
                     </div>
                     <div className="sort-by-content">
                         <span> Sort By: </span> <select className="select-content">
-                            <option selected>Date, new to old</option>
+                            <option selected  >Date, new to old</option>
                             <option >Date, old to new</option>
                         </select>
                     </div>
                     <div className="main-content" >
 
                         <div className="Arrivals-content col-12 ">
-                            {listProductNew && listProductNew.length > 0 &&
-                                listProductNew.map((item, index) => {
+                            {allProductAnime && allProductAnime.length > 0 &&
+                                allProductAnime.map((item, index) => {
                                     let imageBuffer = ''
                                     imageBuffer = new Buffer(item.imageProduct, 'base64').toString('binary');
                                     return (
@@ -88,4 +82,4 @@ const NewArrivals = () => {
         </>
     )
 }
-export default NewArrivals
+export default AnimeExclusive

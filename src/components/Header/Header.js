@@ -51,7 +51,7 @@ const Header = () => {
                                     <NavLink to="/New" className="header__option nav-link ">My Wishlist</NavLink>
                                     <NavLink to="/New" className="header__option nav-link ">Help</NavLink>
                                     <div className='Social-content'>
-                                        <Nav.Link href="#link" className="header__option ">
+                                        <Nav.Link href="https://www.facebook.com/nquocviett" className="header__option ">
                                             <i class="fa-brands fa-facebook-f active1"></i>
                                         </Nav.Link>
 

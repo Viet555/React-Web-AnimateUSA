@@ -1,15 +1,14 @@
 
 import './Home.scss'
-import BuyAlotTour from '../BuylotTour/BuyAlotTour';
 import MainBanner from '../MainBanner/MainBanner';
 import Slider from "react-slick";
 import PreFigures from './PreFigures';
 
 import PreCharacters from './PreCharacters';
 import Dropmenu from './MenuDrop/Dropmenu';
-import AnimeExclusive from './AnimeExclusive';
 import { useEffect, useRef } from 'react';
 import ImgSection from '../Admin/DisplayAdd/ImgSection';
+import PreAnimeExclusive from './PreAnimeExclusive';
 
 
 const Home = () => {
@@ -34,7 +33,7 @@ const Home = () => {
 
             <PreFigures />
             <PreCharacters />
-            <AnimeExclusive />
+            <PreAnimeExclusive />
 
 
         </>

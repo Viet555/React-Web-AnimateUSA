@@ -42,7 +42,7 @@ const handleUpdateUserByAdmin = (id, firstName, lastName, roleId, address, gende
     return axios.put(`/api/update-user-admin`, { id, firstName, lastName, roleId, address, gender, image });
 }
 const handleGetAllProductNew = () => {
-    return axios.get('/api/get-all-product-new',);
+    return axios.get(`/api/get-all-product-new`)
 }
 export {
     userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg,

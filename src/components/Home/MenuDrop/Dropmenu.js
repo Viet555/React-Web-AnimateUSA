@@ -4,8 +4,9 @@ import './Dropmenu.scss'
 import { Nav, } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 
-import { ROUTE } from 'react-router-dom';
+
 import { Link, NavLink } from 'react-router-dom';
+import { ROUTE } from '../../../constant';
 const Dropmenu = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -37,15 +38,15 @@ const Dropmenu = () => {
                             Shop by Series
                         </NavLink>
 
-                        <NavLink to='/new-arrivals-product' className='menu-drop nav-link'>
+                        <NavLink to='/new-arrivals-product' className='menu-drop nav-link '>
                             New Arrivals
 
                         </NavLink>
 
-                        <NavLink to="/" className='menu-drop nav-link'>
+                        <NavLink to={ROUTE.PRE_ORDERS} className='menu-drop nav-link'>
                             Pre-orders
                         </NavLink>
-                        <NavLink to="/" className='menu-drop nav-link'>
+                        <NavLink to={ROUTE.ANIME_EXCLUSIVE} className='menu-drop nav-link'>
                             animate Exclusive
                         </NavLink>
                         <NavDropdown title="Character Goods" id="basic-nav-dropdown" className='menu-drop'>
@@ -89,10 +90,10 @@ const Dropmenu = () => {
                         <NavLink to='/new-arrivals-product' className='menu-drop nav-link'>
                             New Arrivals
                         </NavLink>
-                        <NavLink to="/" className='menu-drop nav-link'>
+                        <NavLink to={ROUTE.PRE_ORDERS} className='menu-drop nav-link'>
                             Pre-orders
                         </NavLink>
-                        <NavLink to="/" className='menu-drop nav-link'>
+                        <NavLink to={ROUTE.ANIME_EXCLUSIVE} className='menu-drop nav-link'>
                             animate Exclusive
                         </NavLink>
                         <NavDropdown title="Character Goods" id="basic-nav-dropdown" className='menu-drop'>

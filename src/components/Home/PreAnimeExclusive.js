@@ -1,13 +1,12 @@
-import './AnimeExclusive.scss'
-import anm2 from '../../asset/image/animeexclusive/anm2.webp'
-import anm22 from '../../asset/image/animeexclusive/anm22.webp'
+import './PreAnimeExclusive.scss'
+
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import * as action from '../Store/export'
 import _ from 'lodash'
 import { Buffer } from 'buffer'
 import { useNavigate } from 'react-router-dom'
-const AnimeExclusive = () => {
+const PreAnimeExclusive = () => {
 
     const productAnime = useSelector((state => state.admin.ProductAnime))
     const dispatch = useDispatch()
@@ -50,7 +49,7 @@ const AnimeExclusive = () => {
                                     let imageBuffer = ''
                                     imageBuffer = new Buffer(item.imageProduct, 'base64').toString('binary');
                                     return (
-                                        <div className='content col-3 ' key={index}>
+                                        <div className='content col-2 ' key={index}>
                                             <div className='img-display'
                                                 onMouseOver={() => handleOnMouse()}
                                                 onMouseOut={() => handleOnMouse()}
@@ -90,4 +89,4 @@ const AnimeExclusive = () => {
         </>
     )
 }
-export default AnimeExclusive;
+export default PreAnimeExclusive;
