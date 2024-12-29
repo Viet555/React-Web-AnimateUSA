@@ -30,13 +30,14 @@ const Header = () => {
 
                                 <Nav className='nav__header-option'>
 
-                                    <NavLink to='/login' className='header__option nav-link option-login'> {userInfo && userInfo.firstName ? userInfo.firstName : "Sign In / Register"}</NavLink>
+                                    <NavLink to={userInfo ? '/' : '/login'} className='header__option nav-link option-login'> {userInfo && userInfo.firstName ? userInfo.firstName : "Sign In / Register"}</NavLink>
                                     {userInfo && userInfo.roleId === 'Admin' ?
                                         <>
                                             <NavLink to="/manager-CRUD-user" className="header__option  nav-link ">ManagerUser </NavLink>
 
                                             <NavDropdown title="Product" id="basic-nav-dropdown" className='header__option  '>
                                                 <NavLink to={ROUTE.MANAGER_PRODUCT} className="header__option  nav-link header-drop" > Manager Product </NavLink>
+                                                <NavLink to={ROUTE.MANAGER_FAQ} className="header__option  nav-link header-drop" > Manager Faq </NavLink>
                                                 {/* <NavLink to={ROUTE.MANAGER_MARKDOWN} className="header__option  nav-link header-drop ">MarkDown Product </NavLink>
                                                 <NavLink to={ROUTE.MANAGER_ADD_BANNER} className="header__option  nav-link header-drop">Banner Display </NavLink>
                                                 <NavLink to={ROUTE.MANAGER_TABLE_PRODUCT} className="header__option  nav-link header-drop"> Table Product </NavLink> */}

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import './FooterApp.scss'
-import { FOOTER } from '../constant'
+import { FOOTER, ROUTE } from '../constant'
 const FooterApp = () => {
     return (
         <>
@@ -31,7 +31,7 @@ const FooterApp = () => {
                             <span>INFORMATION</span>
                             <a href='/'>Terms of Use</a>
                             <a href='/'>Privacy Policy </a>
-                            <a href='/'>FAQ</a>
+                            <a href={ROUTE.FAQ_CONTENT}>FAQ</a>
 
                         </div>
                     </div>

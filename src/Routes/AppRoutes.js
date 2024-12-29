@@ -19,6 +19,9 @@ import NewArrivals from "../components/Home/MenuDrop/NewArrial/NewArrivals";
 import AnimeExclusive from "../components/Home/MenuDrop/AnimeExclusive/AnimeExclusive";
 import PreOrder from "../components/Home/MenuDrop/PreOrder/PreOrder";
 import Blog from "../components/Home/Blog/Blog";
+import FaqManager from "../components/Admin/HelpManger.js/Faq";
+import Faq from "../components/Help/Faq";
+import Contact from "../components/Help/Contact";
 
 const AppRoutes = () => {
 
@@ -44,6 +47,9 @@ const AppRoutes = () => {
 
                 <Route path={ROUTE.BLOG} element={<Blog />} />
 
+                <Route path={ROUTE.MANAGER_FAQ} element={<FaqManager />} />
+                <Route path={ROUTE.FAQ_CONTENT} element={<Faq />} />
+                <Route path={ROUTE.CONTACT} element={<Contact />} />
             </Routes>
 
         </>

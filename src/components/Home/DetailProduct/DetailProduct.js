@@ -37,6 +37,7 @@ const DetailProduct = (props) => {
     const [dataProduct, setDataProduct] = useState([])
     const params = useParams()
     const [imagepro, setImagePro] = useState('')
+    const [count, setCount] = useState(0)
     // const [imageSliderProduct, setImageSliderProduct] = useState('')
     const [isOpen, setIsopen] = useState(false)
     useEffect(() => {
@@ -70,6 +71,7 @@ const DetailProduct = (props) => {
             }
         }
     }
+
     // const RenderHTML = (props) => (<span dangerouslySetInnerHTML={{ __html: dataProduct.markdown.contentHTML }}></span>)
     return (
         <>
@@ -107,9 +109,14 @@ const DetailProduct = (props) => {
 
                             <div className='evalute'>
                                 <div className='amount-product'>
-                                    <span className='amount-minus'><i className="fa-solid fa-minus"></i></span>
-                                    <span>1</span>
-                                    <span className='amount-plus'><i className="fa-solid fa-plus"></i></span>
+                                    <span className='amount-minus'> <i
+
+                                        onClick={() => setCount((count) => count - 1)}
+                                        className="fa-solid fa-minus"></i></span>
+                                    <span>{count}</span>
+                                    <span className='amount-plus'><i
+                                        onClick={() => setCount((count) => count + 1)}
+                                        className="fa-solid fa-plus"></i></span>
                                 </div>
                                 <div className='Cart'>
                                     <button className='add-to-cart'><i className="fa-solid fa-bag-shopping mx-2"></i>add to cart</button>

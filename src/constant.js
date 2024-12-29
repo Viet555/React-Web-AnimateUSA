@@ -18,8 +18,12 @@ export const ROUTE = {
     PRE_ORDERS: '/all-product-preorder',
 
     //
-    BLOG: '/Blog'
+    BLOG: '/Blog',
 
+    //
+    MANAGER_FAQ: '/managerFaq',
+    FAQ_CONTENT: '/Faq-content',
+    CONTACT: '/contact-us',
     // MANAGER_MARKDOWN: '/Markdown-product',
     // MANAGER_ADD_BANNER: '/managerBanner-display',
     // MANAGER_TABLE_PRODUCT: '/manager-table-product'

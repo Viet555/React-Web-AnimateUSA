@@ -44,8 +44,14 @@ const handleUpdateUserByAdmin = (id, firstName, lastName, roleId, address, gende
 const handleGetAllProductNew = () => {
     return axios.get(`/api/get-all-product-new`)
 }
+const handleCreateFaq = (dataInput) => {
+    return axios.post(`/api/create-Faq`, dataInput)
+}
+const ApiGetFaq = () => {
+    return axios.post(`/api/get-faq`)
+}
 export {
     userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg,
     fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay, getALLProductByType, AllDataProductByid, DeleteUserById,
-    SaveDeltailProduct, getAllProduct, fetchAllUserTabel, handleUpdateUserByAdmin, handleGetAllProductNew
+    SaveDeltailProduct, getAllProduct, fetchAllUserTabel, handleUpdateUserByAdmin, handleGetAllProductNew, handleCreateFaq, ApiGetFaq
 }

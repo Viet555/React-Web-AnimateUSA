@@ -72,8 +72,8 @@ const Dropmenu = () => {
                             <NavDropdown.Item href="#action/3.2" className='menu-item'>DVD/Blu-ray (BL)</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Help" id="basic-nav-dropdown" className='menu-drop'>
-                            <NavDropdown.Item href="#action/3.1" className='menu-item'>FAQ</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2" className='menu-item'>Contact us(form)</NavDropdown.Item>
+                            <NavLink to={ROUTE.FAQ_CONTENT} className="  nav-link menu-item px-3" > FAQ</NavLink>
+                            <NavLink to={ROUTE.CONTACT} className="  nav-link menu-item px-3" > Contact us(form)</NavLink>
                             <NavDropdown.Item href="#action/3.2" className='menu-item'>Getting to LA Store</NavDropdown.Item>
                         </NavDropdown>
                     </div>
