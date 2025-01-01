@@ -50,8 +50,11 @@ const handleCreateFaq = (dataInput) => {
 const ApiGetFaq = () => {
     return axios.post(`/api/get-faq`)
 }
+const PostContact = (data) => {
+    return axios.post(`/api/post-Infor-contact`, data)
+}
 export {
     userLogin, CreateAccount, AddBannerImage, fetchLimitBannerImg,
     fetchDataTypeProduct, createProductDisplay, fetchLimitProductDisplay, getALLProductByType, AllDataProductByid, DeleteUserById,
-    SaveDeltailProduct, getAllProduct, fetchAllUserTabel, handleUpdateUserByAdmin, handleGetAllProductNew, handleCreateFaq, ApiGetFaq
+    SaveDeltailProduct, getAllProduct, fetchAllUserTabel, handleUpdateUserByAdmin, handleGetAllProductNew, handleCreateFaq, ApiGetFaq, PostContact
 }
